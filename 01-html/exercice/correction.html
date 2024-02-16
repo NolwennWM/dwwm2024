@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Il devrait y avoir la langue -->
+<html>
+    <!-- Il y a jusqu'à 20 erreurs à trouver. -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trouver les erreurs</title>
+    <!-- La description ne doit pas contenir de mot clef aléatoire -->
+    <meta name="description" content="HTML Bitcoin idole banane fortnite">
+    <!-- Le type ne correspond pas au fichier -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/png">
+</head>
+<body>
+    <!-- Il faut respecter la sémantique des balises (un footer devrait se trouver en bas) -->
+    <footer id="accueil">
+        <!-- Les images doivent avoir un attribut "alt" -->
+        <img src="../../assets/images/favicon.ico">
+        <!-- L'ordre des titres doit être logique (on ne met pas un titre plus grand en dessous d'un plus petit) -->
+        <h4>super site !</h4>
+    </footer>
+    <!-- Les "ul", "ol" et "menu" ne devrait contenir que des "li" -->
+    <menu>
+        <h1>Navigation</h1>
+        <!-- Les balises "li" ne sont pas fermé -->
+        <!-- On ne devrait pas ouvrir de nouvel onglet sans bonne raison -->
+        <li><a href="#accueil" target="_blank">accueil</a><li>
+        <li><a href="#contact" target="_blank">contact</a><li>
+        <li><a href="#listeArticle" target="_blank">articles</a><li>
+        <!-- L'ordre des ancres ne correspond pas à l'ordre de la page -->
+    </menu>
+    <main>
+        <!-- On respecte la sémantique, ici on serait plus dans une "section" contenant des articles et non l'inverse -->
+        <article id="listeArticle">
+            <!-- Les sections et les articles doivent avoir un titre -->
+            <section>
+                <!-- Cela aurait plus sa place en tant que titre -->
+                <p>Le titre de mon premier article !</p>
+                <!-- un main ne devrait pas apparaître en tant que descandant d'un autre main -->
+                <main>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis recusandae sequi ex ullam, deleniti iure aspernatur quis eum quod voluptatum minima optio commodi unde quas dolore iste vero in saepe?
+                </main>
+            </section>
+            <section>
+                <p>Le titre de mon second article !</p>
+                <main>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis recusandae sequi ex ullam, deleniti iure aspernatur quis eum quod voluptatum minima optio commodi unde quas dolore iste vero in saepe?
+                </main>
+            </section>
+        </article>
+    </main>
+    <!-- Il ne devrait y avoir qu'un seul main -->
+    <main>
+        <!-- Il manque les attributs action et method à la balise form -->
+        <form id="contact">
+            <!-- C'est génant pour l'utilisateur de devoir supprimer ce qui est présent dans l'input, un placeholder serait plus adapté -->
+            <input type="text" name="nom" value="Votre nom !">
+            <br>
+            <!-- Tous les inputs devrait avoir un name différent -->
+            <input type="text" name="nom" value="votre prénom !">
+            <br>
+            <!-- Pour un long texte comme un commentaire, un textarea sera plus adapté -->
+            <input type="text" name="commentaire" value="votre commentaire !">
+            <br>
+            <input type="submit" value="Envoyer">
+        </form>
+    </main>
+</body>
+</html>

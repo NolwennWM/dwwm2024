@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les tableaux !</title>
+    <style>
+        table, th, td
+        {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <!-- La balise "table" représente un tableau -->
+    <table>
+        <!-- la balise "tr" représente une rangé du tableau -->
+        <tr>
+            <!-- la balise "td" représente une case du tableau -->
+            <td>case 1</td>
+            <td>case 2</td>
+        </tr>
+        <tr>
+            <!-- Il est important d'avoir sur chaque ligne, le même nombre de case -->
+            <td>case 3</td>
+            <td>case 4</td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <!-- thead représente l'entête du tableau -->
+        <thead>
+            <tr>
+                <!-- th représente une case du thead, elle sera en gras
+                colspan permet de fusionner des colonnes.
+                    Ici j'indique que mes deux cases prennent chacune "2 colonnes" -->
+                <th colspan="2">Fruits</th>
+                <th colspan="2">Légumes</th>
+            </tr>
+        </thead>
+        <!-- tbody représente le corps du tableau -->
+        <tbody>
+            <tr>
+                <td>orange</td>
+                <td>cerise</td>
+                <td>poivron</td>
+                <!-- rowspan permet de fusionner des cases sur un certain nombre de ligne (ici 2) -->
+                <td rowspan="2">courgette</td>
+            </tr>
+            <tr>
+                <td>pomme</td>
+                <td colspan="2">tomate</td>
+            </tr>
+        </tbody>
+        <!-- tfoot représente le pied du tableau -->
+        <tfoot>
+            <tr>
+                <td colspan="4">Mangez 5 fruits et légumes par jour</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
