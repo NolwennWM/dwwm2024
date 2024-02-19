@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecteur CSS</title>
+    <style>
+        header
+        {
+            font-size: 30px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- header>h1>a>{Testons nos Selecteurs} -->
+    <header style="background-color: blueviolet;">
+        <h1>
+            <a href="https://www.google.fr/search?q=carbonade" target="_blank">
+                Testons nos Selecteurs
+            </a>
+        </h1>
+    </header>
+    <!-- main>(p>lorem)+article*2>p>{Gros articles très long $} -->
+    <main>
+        <p>
+            <span>Lorem ipsum dolor </span>sit amet consectetur adipisicing elit. Temporibus, saepe! <span>Libero laborum ipsum aut,</span>  minima obcaecati architecto repudiandae officia perferendis omnis! <span> Dolores nesciunt tempore porro</span> facilis nostrum deserunt officia! Quasi.
+        </p>
+        <article>
+            <p>
+                Gros articles très long 1
+            </p>
+        </article>
+        <article>
+            <p>
+                Gros articles très long 2
+            </p>
+        </article>
+    </main>
+    <!-- footer>ul>li*6>{Menu $} -->
+    <footer>
+        <ul>
+            <li id="MenuImportant">
+                Menu 1
+            </li>
+            <li>
+                <a href="https://www.amazon.fr">Amazon</a>
+            </li>
+            <li class="peuImportant">
+                Menu 3
+            </li>
+            <li>
+                <a href="https://www.marquiset.fr">Nolwenn</a>
+            </li>
+            <li class="peuImportant">
+                Menu 5
+            </li>
+            <li>
+                <a href="https://fr.wikipedia.org/wiki/amazonie">Wikipedia</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
