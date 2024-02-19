@@ -1,0 +1,192 @@
+/* 
+    Pour intégrer du CSS à une page HTML, 3 solutions s'offrent à nous.
+        1. intégrer l'attribut "style" à la balise choisi
+        2. ajouter la balise "style" dans le head
+        3. Créer un fichier CSS et le lier avec une balise "link"
+    
+    Pour écrire du CSS.
+    On va commencer par écrire un "selecteur" qui permettra d'indiquer ce que l'on souhaite cibler.
+    Puis entre accolade, les règles à appliquer à notre cible.
+
+    Une règlé s'écrit de la façon suivante : 
+        "nom de la règle": "valeur à lui donner";
+    Par exemple : 
+        background-color: red;
+
+    Par défaut, le code est lu de haut en bas.
+    Donc si une règle est imposé par du code puis contredite plus bas.
+    C'est la dernière qui s'applique.
+    Une règle avec "!important" sera toujours prioritaire.
+        (plus de détail sur les priorités en bas du cours)
+*/
+header
+{
+    font-style: italic;
+    background-color: chartreuse !important;
+    font-size: 20px;
+}
+/* -------------- Enfant Direct ou Indirect ------------------ */
+main p
+{
+    /* Selectionne tous les p se trouvant dans un main, peu importe si d'autres balises se trouvent entre eux. */
+    background-color: lightsalmon;
+}
+main > p 
+{
+    /* Selectionne tous les p se trouvant directement dans un main, excluant ceux se trouvant dans une autre balise */
+    background-color: olive;
+}
+/* ------------ Frère direct ou indirect ------------------ */
+p ~ article 
+{
+    /* Selectionne tous les articles se trouvant après (au même niveau) qu'un p */
+    color:darkblue;
+}
+p + article
+{
+    /* Selectionne tout article se trouvant juste après un p (seulement le suivant) */
+    color: darkgoldenrod;
+}
+/* ------------------- Les pseudo classes ------------------  */
+/* Les pseudo classes sont des des selecteurs s'écrivant ainsi ":nom" */
+li:hover
+{
+    /* Au survol de l'élément précédent la pseudo class (ici au survol des li) */
+    background-color: deeppink;
+}
+li:nth-of-type(3)
+{
+    /* 
+        Selectionne le 3ème "li" d'une liste 
+        Existe aussi en partant de la fin ":nth-last-of-type()"
+    */
+    background-color: tomato;
+}
+li:nth-child(2)
+{
+    /* 
+        Selectionne le 2ème enfant si c'est un "li" 
+        existe aussi en partant de la fin ":nth-last-child()"
+    */
+    background-color: darkorange;
+}
+h1 a
+{
+    color: antiquewhite;
+}
+h1 a:active
+{
+    /* Lorsque le lien est activé (lors du clique) */
+    color: cyan;
+}
+h1 a:visited
+{
+    /* Lorsque le lien a déjà été visité */
+    color: red;
+}
+p span:not(:nth-of-type(2))
+{
+    /* 
+        ":not()" permet d'exclure un élément.
+        Ici on selectionne tous les span dans un p excepté le second
+    */
+    color: magenta;
+}
+/* -------------- les pseudo elements ----------------- */
+/* Les pseudo éléments s'écrivent ainsi "::nom" */
+article p::first-letter
+{
+    /* Selectionne la première lettre des p dans mes articles */
+    font-size: 50px;
+}
+main > p::first-line
+{
+    /* Selectionne la première ligne des p directement enfant de main */
+    font-weight: bold;
+}
+h1::before
+{
+    /* Ajoute un élément avant le contenu du h1 (la règle "content" est obligatoire) */
+    content: "super titre ->";
+}
+h1::after
+{
+    /* Ajoute un élément après le contenu du h1 (la règle "content" est obligatoire) */
+    content: "<- C'est faux";
+}
+/* ---------------- classes, ID et attributs ------------------- */
+#MenuImportant
+{
+    /* Pour selectionner un élément par son id, je fais précéder le nom de l'id par un "#" */
+    font-size: 42px;
+    font-weight: bold;
+    color: red;
+}
+.peuImportant
+{
+    /* Pour selectionner des éléments par leur classe, je fais précéder le nom de la classe par un "." */
+    font-size: 8px;
+    color: gainsboro;
+}
+a[target]
+{
+    /* 
+        Avec les "[]" je peux selectionner des éléments via leurs attributs 
+        Ici je selectionne tout "a" ayant un attribut "target"
+    */
+    font-family: cursive;
+}
+a[href*="amazon"]
+{
+    /* 
+        Selectionne tout "a" dont le href contient le mot "amazon"
+    */
+    font-family: monospace;
+}
+a[href$=".fr"]
+{
+    /* 
+        Selectionne tout "a" dont le href termine par ".fr"
+    */
+    background-color: aquamarine;
+}
+a[href^="https"]::before
+{
+    /* 
+        Selectionne tout "a" dont le href commence par "https"
+    */
+    content: "🍗✓";
+}
+/* -------------- autres selecteurs --------------- */
+*:not(h1)
+{
+    /* 
+        "*" signifie "toute les balises"
+        Ici je selectionne tout sauf le h1
+    */
+    font-size: 18px;
+}
+article p, li:nth-child(2), span:nth-of-type(2)
+{
+    /* la virgule est utilisé pour selectionner plusieurs éléments en même temps, même si ils n'ont rien à voir entre eux. */
+    font-family: cursive;
+}
+/* 
+    On parlait du système de priorité en début de cours.
+    Il existe un autre système qui rend prioritaire les éléments selectionnés avec plus de précision.
+
+    Ce système est représenté par 3 chiffres : "0,0,0"
+
+    Le premier chiffre étant plus important que le suivant :
+    1,0,0 aura la priorité sur 0,15,9
+    0,1,0 aura la priorité sur 0,0,8
+    0,7,0 aura la priorité sur 0,5,0
+
+    Chaque selecteur différent fera augmenter un chiffre spécifique:
+        une balise (div, header...) fera évoluer le dernier chiffre
+            main > p vaudra 0,0,2
+        Une classe fera évoluer le second chiffre
+            div.classCool vaudra 0,1,1
+        un id fera évoluer le premier chiffre
+            #superId vaudra 1,0,0
+*/
