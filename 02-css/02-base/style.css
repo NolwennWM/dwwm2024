@@ -1,0 +1,125 @@
+/* Importer une police d'écriture */
+@font-face 
+{
+    font-family: "BlakaHollow";
+    src: url(../../assets/fonts/BlakaHollow-Regular.ttf);
+}
+/* La racine du document, sur un fichier HTML cela représente la balise "html" */
+:root
+{
+    /* 
+        Une variable CSS est représenté par un mot précédé de "--"
+        Elle servira à contenir une valeur que l'on pourra réutiliser à plusieurs endroits du code.
+    */
+    --main-background-color: royalblue;
+    --main-text-color: pink;
+    --divTextSize: 10px;
+}
+body
+{
+    /* 
+        lorsque l'on met un background color sur le body.
+        Celui ci s'applique sur toute la page. 
+        même si le body lui est plus petit
+    */
+    background-color: aquamarine;
+}
+.target1
+{
+    /* indiquer plusieurs polices d'écriture permet au navigateur de tenter une autre solution si la première ne fonctionne pas */
+    font-family: "BlakaHollow", monospace, 'Times New Roman', Times, serif;
+    /* Pour utiliser une variable définie plus haut, il faut écrire le nom de la variable entre les parenthèses suivant "var()" */
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    font-size: var(--divTextSize);
+}
+.target2
+{
+    /* 
+        Les couleurs peuvent être selectionnés de différentes façons,
+        les mots clef prédéfinies qui en offrent quelques dizaines
+        Avec la fonction rgb() à laquelle on donne le niveau de rouge, de vert et de bleu que l'on souhaite séparé de virgules.
+        Ces valeurs allant de 0 à 255
+    */
+    background-color: rgb(0,0,0);
+    color: rgb(255, 255, 255);
+}
+.target3
+{
+    /* 
+        Les valeurs hexadecimal des couleurs sont représenté par un # puis 6 chiffres fonctionnant par paire
+        Les deux premier représentent le rouge
+        les deux suivants le vert 
+        et les deux derniers le bleu
+    */
+    background-color: #000000;
+    color: #FFFFFF;
+}
+.target4
+{
+    /* 
+        le hsl est une représentation des couleurs sur une roue chromatique.
+        la première valeur est le degré sur la roue
+        la seconde, le pourcentage de saturation
+        la troisième le pourcentage de brillance
+    */
+    background-color: hsl(0,0%,0%);
+    color: hsl(360, 100%, 100%);
+}
+.target5
+{
+    /* 
+        rgba ou hsla prennent une quatrième valeur étant un chiffre entre 0 et 1.
+        Cela gère la transparence de la couleur. à 0 elle est invisible.
+        à 1 totalement opaque
+    */
+    background-color: rgba(21, 93, 226, 0.7);
+    color: hsla(84, 75%, 39%, 0.5);
+}
+.target6
+{
+    /* 
+        Différentes unités de mesure sont possible.
+        la plus classique étant le pixel (px)
+        Une taille très adaptative sera le em (1em vaut, une fois la taille de la police)
+    */
+    font-size: 20px;
+    height: 2em;
+}
+.target7
+{
+    /* 
+        rem représente la taille de la police à la racine du document.
+        Les % prennent un pourcentage du parent (ici le body n'a pas de hauteur fixé, donc le % ne fonctionne pas)
+    */
+    font-size: 2rem;
+    height: 20%;
+}
+.target8
+{
+    /* 
+        les vw représentent un pourcentage de la largeur du viewport
+        les vh représentent un pourcentage de la hauteur du viewport
+        On notera l'existence de dvw et dvh qui sont particulièrement pratique sur format mobile, car ils prennent en compte les interfaces retractable des mobiles
+    */
+    font-size: 5vw;
+    height: 20vh;
+}
+.target9
+{
+    /* 
+        vmax représente un pourcentage de l'axe le plus grand. (si la largeur est plus grande que la hauteur, c'est un pourcentage de la largeur et inversement)
+        vmin représente un pourcentage de l'axe le plus petit.
+    */
+    font-size: 5vmax;
+    height: 20vmin;
+}
+.target10
+{
+    /* 
+        Il existe tout un tas d'autres mesures possibles, le cm, le pc... mais celles qui précèdent sont les plus communes
+        la fonction clamp permet de donner un minimum et un maximum à une taille variable.
+        Ici j'indique que ma police fera au minimum 25px, au maximum 40px, cela dépendant de 5% de la largeur du viewport
+    */
+    font-size: clamp(25px, 5vw, 40px);
+}
