@@ -1,0 +1,124 @@
+*, ::before, ::after
+{
+    /* 
+        Plusieurs balises ont une marge et un padding par défaut.
+        On peut travailler avec ou alors choisir de les remettre à 0.
+    */
+    margin: 0;
+    padding: 0;
+    /* 
+        Lorsque l'on indique la taille d'un élément par défaut, cela ne prend en compte que sa boîte de contenu. le padding et la bordure s'ajouteront dessus.
+        En mode "border-box" la taille prend en compte la bordure et le padding
+        Exemple :
+            Pour un élément avec un padding de 10px et une bordure de 5px
+            si je lui demande une largeur de 200px 
+            par défaut il fera 230px
+            en border-box il fera 200px
+    */
+    box-sizing: border-box;
+}
+header
+{
+    /* Utiliser une image de fond */
+    background-image: url(../../assets/images/paysage/lava.jpg);
+    /* Gérer la répétition de l'image */
+    background-repeat: no-repeat;
+    /* Positionner l'image */
+    background-position: center;
+    /* Indique si l'image doit être contenu ou couvrir l'élément */
+    background-size: cover;
+}
+main
+{
+    background-color: rgb(167, 145, 187);
+}
+article
+{
+    /* défini la largeur d'un élément */
+    width: 45%;
+    /* Défini le display de l'élément (block, inline, inline-block ou autres, dont 2 qui auront leurs cours dédiés) */
+    display: inline-block;
+    /* 
+        les propriétés de bordure "border-xxx" permettent d'afficher la bordure d'un élément.
+        Elles peuvent être résumé par la propriété "border" prenant les différents valeurs séparés d'un espace.
+    */
+    /* border-color: black;
+    border-style: solid;
+    border-width: 5px; */
+    border: 5px solid black;
+    /* border-top-style: dotted; */
+
+    /* 
+        Le padding permet d'espacer le contenu avec sa bordure.
+        Les différentes propriétés de padding peuvent être résumé par la propriété "padding"
+        Si on lui donne 4 valeurs, celles ci iront dans l'ordre au top, right, bottom et left.
+        Si on lui en donne 2, ce sera la première pour top et bottom, la seconde pour right et left.
+        et 1 seul valeur s'appliquera aux 4
+    */
+    /* padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px; */
+    /* padding: 10px 5px 10px 5px; */
+    padding: 10px 5px;
+    /* Les propriétés de margin, ajoute une marge à l'exterieur de la bordure, elles suivent les même règles de que le padding */
+    margin: 20px auto 20px 5px;
+}
+h1
+{
+    font-size: 42px;
+    /* .8em == 0.8em */
+    padding: .8em .1em;
+    color: antiquewhite;
+    /* Gère l'alignement du texte */
+    text-align: center;
+    /* Permet de "décorer" le texte (souligner, barrer...) */
+    text-decoration: underline wavy pink;
+}
+p
+{
+    font-size: 20px;
+}
+p::first-letter
+{
+    font-size: 2em;
+}
+footer
+{
+    background-color: chartreuse;
+    /* min-height indique une hauteur minimum si le contenu est plus petit */
+    min-height: 50px;
+    /* 
+        On aura aussi l'inverse avec max-height, une auteur a ne pas dépasser.
+        ou height pour une hauteur fixe.
+        Et ces variantes existent aussi pour la largeur
+        width, min-width, max-width
+    */
+}
+li
+{
+    display: inline-block;
+    background-color: aqua;
+    /* Si l'élément ne possède qu'une seule taille (ici la largeur de son contenu. 
+    La seconde est selectionné par ratio (ici en indiquant 1/1, la largeur et la hauteur doivent être égale) */
+    aspect-ratio: 1/1;
+    /* arrondi les angles du block, à 50% cela forme un cercle */
+    border-radius: 50%;
+    padding: 1rem 5px;
+    margin-left: 15%;
+}
+div
+{
+    width: 40vw;
+    max-height: 90vh;
+    margin: 5px auto;
+}
+img
+{
+    width: 100%;
+    height: 20vh;
+    /* Fonctionne comme background-size mais adapté à une balise img et son parent */
+    object-fit: cover;
+    /* fonctionne comme background-position mais adapté à une balise img et son parent */
+    object-position: center;
+}
