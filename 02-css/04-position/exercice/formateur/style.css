@@ -1,0 +1,37 @@
+/* Reproduire la forme suivante : */
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+}
+.sky{
+    height: 100%;
+    background: linear-gradient(to right, #904E95, #E96443);
+}
+.cloud{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+}
+.cloud div{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background-color: whitesmoke;
+}
+.part1{
+    top: -35%;
+}
+.part2{
+    left: 35%;
+}
+.part3{
+    left: -35%;
+}
