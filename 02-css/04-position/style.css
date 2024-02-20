@@ -1,0 +1,137 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    height: 400vh;
+}
+/* 
+    La propriété "position" permet de changer la façon dont se positionne nos éléments.
+    Une fois un type de position choisi.
+    On pourra déplacer nos éléments avec les propriétés : 
+        top, bottom, right ou left
+        auxquelles on appliquera une mesure (px, %...)
+*/
+header
+{
+    padding: 1rem;
+    background-color: slategray;
+    color: antiquewhite;
+    text-align: center;
+    /* 
+        En position fixed, l'élément sort du flux de la page.
+        et reste toujours visible lors du défilement.
+        Sa largeur devient égale à celle de son contenu
+    */
+    position: fixed;
+    width: 100%;
+    /* 
+        le z-index permet de choisir la profondeur à laquelle se trouve un élément positionné.
+        Par défaut tout élément est sur l'index 0.
+        Un index positif, se trouve plus proche de l'écran.
+        Un negatif plus éloigné.
+    */
+    z-index: 1;
+    /* 
+        Il est possible d'ajouter plusieurs images à un background image en les séparant d'une virgule.
+        La première sera au dessus de la suivante.
+        Si une propriété de background ne reçoit qu'une seule valeur, elle s'appliquera à toute les images.
+        Mais il est possible d'en donner des différentes en les séparant d'une virgule.
+    */
+    background-image: url(../../assets/images/favicon.ico), url(../../assets/images/paysage/space.jpg);
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+    background-position: 10px, center;
+}
+nav, main
+{
+    margin-top: 50px;
+    display: inline-block;
+    height: 100%;
+    padding: 2rem;
+}
+nav
+{
+    width: 200px;
+    background-color: darkseagreen;
+    /* 
+        Les fonctions de dégradés "xxx-gradient" crée une image d'un dégradé de couleur.
+        Elles se placent donc en background-image.
+        Il est possible d'indiquer autant de couleur qu'on souhaite, 
+        de choisir la direction du dégradé 
+        ou même l'espace que prend chaque couleur.
+    */
+    background-image: linear-gradient(90deg,blue 33%, white 33%, white 66%, red 66%);
+}
+nav ul
+{
+    /* 
+        La position sticky garde l'élément à son emplacement habituel
+        mais dès que le scrolling atteint la position indiqué (ici 70px du top de la page)
+        L'élément commence à suivre le scrolling jusqu'à atteindre la fin de son parent.
+    */
+    position: sticky;
+    top: 70px;
+}
+main
+{
+    /* 
+        Calc permet de faire un calcul entre deux valeurs différentes.
+        ! Attention de bien avoir des espaces entre les mesures et le signe
+    */
+    width: calc(100% - 205px);
+    /* 
+        La propriété "background" resume toute les propriétés de background.
+        radial-gradient permet de faire des dégradés en cercle
+    */
+    background: radial-gradient(circle at 50%, red 40%, white 40%);
+    /* 
+        la position relative garde l'emplacement de l'élément dans le flux de la page.
+        Et en lui indiquant des direction, déplacera l'élément selon sa position de départ.
+            top: 50px; le déplacera à 50px vers le bas.
+        Il est souvent utilisé en commun avec un enfant en position absolute.
+    */
+    position: relative;
+    /* top: 50px; */
+    /* left: 200px; */
+}
+main p:first-child
+{
+    color: antiquewhite;
+    background: linear-gradient(45deg, yellow 25%, black 25%, black 50%, yellow 50%, yellow 75%, black 75%);
+    background-size: 56.57px 56.57px;
+}
+main p:last-child
+{
+    height: 300px;
+    background: conic-gradient(green, yellow, black);
+}
+button
+{
+    /* 
+        La position absolute sort l'élément du flux de la page.
+        Puis le place selon les bords de son parent positionné le plus proche (si aucun, ce sera selon le body)
+        par exemple top: 50px; le placera à 50px du haut de son parent positionné le plus proche.
+    */
+    position: absolute;
+    /* top: 20px;
+    right: 0; */
+    z-index: 2;
+    /* Centrer un élément en absolute : */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+img
+{
+    width: 100px;
+    /* La propriété float retire l'élément de son flux original pour le replacer ailleurs. Elle permet aussi d'avoir du texte suivant les contours de l'élément */
+    float: left;
+    border-radius: 50%;
+    /* shape-outside  permet d'avoir du texte suivant la forme d'un élément non carré lorsque celui ci est en float. */
+    shape-outside: margin-box;
+    margin: 5px;
+}
