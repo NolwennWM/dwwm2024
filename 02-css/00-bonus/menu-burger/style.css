@@ -1,0 +1,91 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.menu1, .menu2
+{
+    padding: 20px;
+}
+label[for="burger1"]{
+    font-size: 2.5rem;
+}
+.menu1 ul, #burger1, #burger2{
+    display: none;
+}
+#burger1:checked + ul{
+    display: block;
+}
+/* 2 */
+.menu2 nav{
+    position: relative;
+}
+[for="burger2"]
+{
+    display: inline-block;
+    width: 25px; 
+    height: 25px;
+    position: absolute;
+    left: calc(100% - 25px);
+    top: calc(1.5rem - 12.5px);
+    transition: all 1s;
+    z-index: 1;
+}
+.stick
+{
+    display: inline-block;
+    width: 100%; 
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    transition: all 1s;
+}
+.stick:nth-child(1)
+{
+    top: 0;
+}
+.stick:nth-child(2)
+{
+    top: 50%;
+}
+.stick:nth-child(3)
+{
+    top: 100%;
+}
+#burger2:checked + label
+{
+    rotate: 360deg;
+    left: 12.5px;
+}
+#burger2:checked + label .stick:nth-child(1)
+{
+    top: 50%;
+    rotate: 45deg;
+}
+#burger2:checked + label .stick:nth-child(2)
+{
+    opacity: 0;
+}
+#burger2:checked + label .stick:nth-child(3)
+{
+    top: 50%;
+    rotate: -45deg;
+}
+.menu2 ul
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 0;
+    overflow: hidden;
+    transition: width 1s;
+    position: absolute;
+    right: 0;
+    padding: 1rem 0;
+    background-color: chartreuse;
+}
+#burger2:checked ~ ul
+{
+    width: 100%;
+}
