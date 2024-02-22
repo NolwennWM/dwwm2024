@@ -1,0 +1,66 @@
+/* Rendre cette page responsive */
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav menu{
+    margin: auto;
+    width: 40vw;
+    display: none;
+}
+#burger
+{
+    display: none;
+}
+#burger:checked + nav menu
+{
+    display: block;
+}
+label[for="burger"]{
+    position: relative;
+    float: right;
+    border: 1px solid black;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    padding: 3px;
+}
+label[for="burger"]:active
+{
+    top: 2px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width:500px){
+    label[for="burger"]{
+        display: none;
+    }
+    .nav menu{
+        width: 100%;
+        display: block;
+    }
+    .nav li{
+        display: inline-block;
+        font-size: 2rem;
+        margin-left: 7vw;
+        padding-left: 20px;
+    }
+}
+@media screen and (min-width:900px){
+    .nav menu
+    {
+        width: 20%;
+        margin: 0;
+    }
+    .nav li
+    {
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .nav li:hover
+    {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+}

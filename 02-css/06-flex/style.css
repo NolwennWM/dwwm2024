@@ -1,0 +1,84 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+    Le display flex permet de rendre des éléments plus flexible et adaptable aux différentes tailles d'écrans.
+    On pourra grâce à cela, faciliter l'espacement des éléments et leur placement.
+    ? Le display flex s'utilise toujours sur le parent des éléments que l'on souhaite déplacer.
+        Ici je souhaite déplacer mes "li". 
+        Je vais donc viser mon "ul"
+*/
+ul
+{
+    display: flex;
+    /* 
+        Le display flex fonctionne sur 2 axes, 
+        un principal et un secondaire.
+        Par défaut le principal est l'axe horizontal et le secondaire le vertical.
+        On peut choisir l'axe principal voulu avec la propriété "flex-direction"
+            Elle prendra en paramètre "row", "column", "row-reverse" ou "column-reverse"
+    */
+    flex-direction: row;
+    height: 25vh;
+    /* 
+        justify-content permet de placer les éléments sur l'axe principal.
+        On peut les placer au début ou à la fin de l'axe.
+        Les centrer ou bien encore choisir un espacement.
+            space-between, space-around, space-evenly
+    */
+    justify-content: space-evenly;
+    /* Permet d'indiquer aux éléments de créer de nouvelles lignes si ils manquent de place. */
+    flex-wrap: wrap;
+    list-style: none;
+    /* Permet de placer les éléments sur l'axe secondaire */
+    align-items: center;
+    border: 1px solid black;
+}
+li
+{
+    width: 40vw;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: brown;
+    margin: 5px;
+    text-align: center;
+}
+li:hover
+{
+    /* 
+        On indique un facteur d'aggrandissement à nos éléments.
+        Ici seul l'élément au survol en a un, donc il prendra la place restante
+    */
+    flex-grow: 1;
+}
+section
+{
+    display: flex;
+    /* Fusion de flex-direction et flex-wrap */
+    flex-flow: column wrap;
+    height: 150px;
+    /* 
+        gap est la fusion de row-gap et column-gap
+        Il permet d'indiquer un espacement entre les colonnes et les rangés
+    */
+    gap: 10px;
+}
+article
+{
+    background-color: aquamarine;
+    width: 40%;
+}
+article:last-child
+{
+    background-color: royalblue;
+    /* 
+        La propriété "order" permet de changer l'ordre des éléments.
+        par défaut chaque élément à une valeur de "0" et suis l'ordre du HTML
+        Si on selectionne un élément et qu'on lui donne une valeur positive, il ira se placer après ceux qui sont en "0" 
+        Et Inversement avec une valeur négative
+    */
+    order: -1;
+}

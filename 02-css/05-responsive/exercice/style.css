@@ -1,0 +1,58 @@
+li
+{
+    color: black;
+    list-style: none;
+    margin-left: 2%;
+}
+label
+{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    border: 1px solid black;
+    box-shadow: 1px 10px 0 0;
+    cursor: pointer;
+    padding: 2px;
+}
+label:active
+{
+    top: 5px;
+    box-shadow: 1px 4px 0 0;
+}
+#test
+{
+    display: none;
+}
+menu
+{
+    display: none;
+}
+#test:checked + menu
+{
+    display: block;
+}
+@media screen and (min-width: 425px) 
+{
+    menu
+    {
+        display: flex;
+        padding: 0;
+    }
+    label
+    {
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) 
+{
+    menu
+    {
+        display: block;
+    }
+    li:hover
+    {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+}
