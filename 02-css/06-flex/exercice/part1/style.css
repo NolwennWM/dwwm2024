@@ -1,0 +1,45 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    height: 100vh;
+    display: flex;
+    flex-flow: row;
+    background-color: yellow;
+}
+div
+{
+    width: 25%;
+}
+.div1{background-color: yellow;}
+.div2{background-color: red;}
+.div3{background-color: white;}
+.div4{background-color: blue;}
+.div5{background-color: pink;}
+.div6{background-color: aquamarine;}
+.div7{background-color: green;}
+.div8{background-color: grey;}
+
+@media screen and (max-width: 810px) 
+{
+    body
+    {
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 375px) 
+{
+    body
+    {
+        gap: 5px;
+    }
+    div
+    {
+        width: calc(50% - 2.5px);
+    }
+}

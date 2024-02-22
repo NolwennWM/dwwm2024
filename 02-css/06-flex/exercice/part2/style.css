@@ -1,0 +1,48 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    height: 100vh;
+}
+main
+{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.div1{background-color: yellow;}
+.div2{background-color: red;}
+.div3{background-color: white;}
+.div4{background-color: blue;}
+.div5
+{
+    background-color: pink;
+    width: 100%;
+}
+.div6{background-color: aquamarine;}
+.div7{background-color: green;}
+.div8{background-color: grey;}
+.div9{background-color: brown;}
+
+div
+{
+    width: 25%;
+}
+@media screen and (max-width: 850px) 
+{
+    div
+    {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 400px) 
+{
+    div
+    {
+        width: 100%;
+    }
+}

@@ -1,0 +1,59 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.un
+{
+    background-color: blueviolet;
+}
+.deux
+{
+    background-color: cornflowerblue;
+    flex-grow: 2;
+}
+.trois
+{
+    background-color: greenyellow;
+}
+.quatre
+{
+    background-color: green;
+}
+body
+{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+div
+{
+    height: 20%;
+    width: 100%;
+}
+@media screen and (min-width: 1000px) 
+{
+    body
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .un
+    {
+        order: -2;
+    }
+    .deux
+    {
+        height: 60%;
+        width: 80%;
+    }
+    .trois
+    {
+        order: -1;
+        height: 60%;
+        width: 20%;
+    }
+}
