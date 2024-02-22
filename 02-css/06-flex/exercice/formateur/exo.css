@@ -1,0 +1,126 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* cela permet de cacher 
+    l'ascenceur */
+    overflow: hidden;
+}
+#exo{
+    /* J'ajoute un ascenceur sur
+    ma div */
+    overflow-y: auto;
+    height: 100vh;
+    /* Cette propriété permet d'indiquer au scrolling
+    qu'il doit s'arrêter sur certains points défini
+    sur les enfants */
+    scroll-snap-type: y mandatory;
+}
+section{
+    height: 100%;
+    /* J'indique au scroll de s'arrêter au centre 
+    de mes sections */
+    scroll-snap-align: center;
+}
+section:nth-of-type(even){
+    background-color: lightslategray;
+}
+div:nth-child(1){
+    background-color: aqua;
+}
+div:nth-child(2){
+    background-color: rgb(0, 255, 8);
+}
+div:nth-child(3){
+    background-color: rgb(212, 96, 28);
+}
+div:nth-child(4){
+    background-color: rgb(218, 67, 178);
+}
+div:nth-child(5){
+    background-color: rgb(41, 60, 227);
+}
+div:nth-child(6){
+    background-color: rgb(209, 221, 44);
+}
+div:nth-child(7){
+    background-color: rgb(85, 66, 54);
+}
+div:nth-child(8){
+    background-color: rgb(141, 182, 196);
+}
+div:nth-child(9){
+    background-color: rgb(19, 67, 83);
+}
+section{
+    display: flex;
+}
+#exo1 div{
+    width: 12.5%;
+}
+#exo2{
+    flex-wrap: wrap;
+}
+#exo2 div{
+    width: 25%;
+}
+#exo2 div:nth-child(5){
+    width: 100%;
+}
+#exo3{
+    flex-wrap: wrap;
+}
+#exo3 header{
+    width: 100%;
+    background-color: blueviolet;
+    height: 20%;
+}
+#exo3 nav{
+    width: 200px;
+    background-color: chartreuse;
+    height: 60%;
+}
+#exo3 main{
+    flex-grow: 1;
+    background-color: cornflowerblue;
+    height: 60%;
+}
+#exo3 footer{
+    width: 100%;
+    background-color: forestgreen;
+    height: 20%;
+}
+@media screen and (max-width: 900px) {
+    #exo1{
+        flex-wrap: wrap;
+    }
+    #exo1 div{
+        width: 25%;
+    }
+    #exo2 div{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 500px) {
+    #exo1{
+        justify-content: space-around;
+        gap: 10px 2%;
+    }
+    #exo1 div{
+        width: 48%;
+    }
+    #exo2 div{
+        width: 100%;
+    }
+    #exo3 main{
+        height: 40%;
+    }
+    #exo3 nav{
+        height: 20%;
+        width: 100%;
+        order:1;
+    }
+    #exo3 footer{
+        order:2;
+    }
+}
