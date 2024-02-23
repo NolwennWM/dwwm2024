@@ -1,0 +1,147 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+    Le display grid, se place comme pour le display flex, sur le parent des éléments que l'on souhaite déplacer.
+
+    Le display grid permet de créer une grille d'autant de colonne et de rangée que souhaité.
+    Puis de placer les différents éléments enfant, sur cette grille.
+*/
+body.cours1
+{
+    min-height: 100vh;
+    display: grid;
+    /* 
+        grid template rows permet d'indiquer le nombre et la taille des rangéees de ma grille.
+        chaque valeur séparé d'un espace représente une nouvelle rangée.
+        Et la valeur est la hauteur de celle ci.
+            auto indique à la rangée de prendre seulement la hauteur necessaire pour son contenu
+            1fr indique de prendre une fraction du site. (si il n'y a pas d'autres unités "fr" utilisé, elle prendra tout l'espace restant.
+        On peut évidement utiliser toute les unités de mesure habituelles.
+    */
+    grid-template-rows: auto 1fr auto;
+}
+main
+{
+    display: grid;
+    /* Si le nombre d'élément de la grille dépasse le nombre de case, il génèrera des cases automatiquement. */
+    grid-template-rows: 20vh auto 200px 100px;
+    /* 
+        Grid template columns indique la taille et le nombre de colonnes.
+        Il fonctionne exactement comme grid template rows
+
+        repeat() permet de répéter une valeur plusieurs fois.
+        ici ça serait l'équivalent d'écrire : 15% 15% 15% 15% 15%
+    */
+    grid-template-columns: repeat(5, 15%);
+    /* permet si il reste de la place, d'espacer les colonnes ou deplacer la grille */
+    justify-content: space-evenly;
+}
+main > div:nth-child(1)
+{
+    /* 
+        Par défaut, chaque élément vient se placer sur la case suivante de la grille.
+        Mais on peut choisir leur emplacement et leur taille.
+    */
+    background-color: lightgreen;
+    /* Permet d'indiquer à partir de quelle colonne mon élément commence. */
+    grid-column-start: 2;
+    /* Indique à quelle colonne s'arrête mon élément. */
+    grid-column-end: 5;
+    /* Permet d'indiquer à quelle rangée il commence */
+    grid-row-start: 1;
+    /* indique à quelle rangée il termine */
+    grid-row-end: 3;
+}
+main > div:nth-child(2)
+{
+    background-color: lightblue;
+    /* Les propriétés grid-column-start et end peuvent être résumé en "grid-column" */
+    grid-column: 1/2;
+    /* De même pour les rangées */
+    grid-row: 1/3;
+}
+main > div:nth-child(3)
+{
+    background-color: lightcoral;
+    /* 
+        On peut encore résumer ces propriétés en "grid-area" avec l'ordre suivant :
+        row-start / column-start / row-end / column-end
+    */
+    grid-area: 1/5/4/6;
+}
+main > div:nth-child(4)
+{
+    background-color: lightseagreen;
+    /* 
+        Plutôt qu'indiquer une position de fin,
+        On peut utilier le mot clef "span" pour indiquer combien de cases l'élément HTML doit prendre.
+    */
+    grid-row: 3/ span 2;
+    grid-column: 1/ span 2;
+}
+main > div:nth-child(5)
+{
+    background-color: lightgoldenrodyellow;
+    /* 
+        ! ATTENTION :
+        On peut volontairement ou involontairement superposer nos cases
+    */
+    grid-row: 2/ span 2;
+    grid-column: 2/ span 2;
+}
+/* Les éléments non placé, viendront utiliser les cases restantes. */
+/* -------------------- GRID AREA -------------------- */
+body.cours2
+{
+    height: 100vh;
+    display: grid;
+    /* 
+        le fr représente une fraction du site.
+        Ici dans nos rangés nous avons un total de 5fr
+        J'indique à ma première rangé de prendre 1/5ème de la hauteur. 
+        à la seconde de prendre 3/5ème et à la dernière de nouveau 1/5ème
+    */
+    grid-template-rows: 1fr 3fr 1fr;
+    /* Ici nous avons 6 fois 1fr, chaque colonne prend donc 1/6ème de la largeur */
+    grid-template-columns: repeat(6, 1fr);
+    /* 
+        Si on a nommé nos éléments avec "grid-area"
+        On peut venir les placer grâce à grid-template-areas
+        chaque "" représentant une nouvelle ligne et chaque nom séparé d'un espace une nouvelle colonne.
+        Attention de bien respecter le même nombre de colonne à chaque ligne
+    */
+    grid-template-areas: 
+    "header header header header header header"
+    "menu article article article chaussette chaussette"
+    "menu footer footer footer footer footer";
+}
+.item1
+{
+    background: blue;
+    /* grid-area peut aussi être utilisé pour nommer les éléments dans la grille */
+    grid-area: header;
+}
+.item2
+{
+    background: red;
+    grid-area: menu;
+}
+.item3
+{
+    background: yellow;
+    grid-area: article;
+}
+.item4
+{
+    background: green;
+    grid-area: chaussette;
+}
+.item5
+{
+    background: pink;
+    grid-area: footer;
+}
