@@ -1,0 +1,111 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul
+{
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+    /* 
+        Les propriétés de transition permettent de forcer le navigateur à changer de valeur petit à petit, plutôt qu'instantannément.
+        Ici j'indique que je souhaite que la propriété "left" prenne "1s" à changer.
+    */
+    transition-property: left;
+    transition-duration: 1s;
+}
+input#burger
+{
+    display: none;
+}
+input#burger:checked ~ ul
+{
+    left: 50%;
+}
+li
+{
+    margin: 1rem 0;
+    display: inline-block;
+}
+button
+{
+    font-size: 3rem;
+    aspect-ratio: 1/1;
+}
+li:nth-child(1) button
+{
+    background-color: chartreuse;
+    /* Je peux indiquer plusieurs propriétés en les séparants d'une virgule */
+    transition-property: background-color, transform;
+    /* La première duration s'applique à la première propriété, et ainsi de suite */
+    transition-duration: 1s, 2s;
+    /* 
+        Permet d'appliquer un délai avant que la transition se lance.
+        Si plusieurs propriétés sont indiqué, mais qu'une seule valeur est donné, elle s'applique à toute les propriétés.
+    */
+    transition-delay: 0.5s;
+    /* 
+        Gère le rythme de la transition, linéaire, ou bien rapide au début et ralenti à la fin... 
+        On peut utiliser des mots clefs (linear, ease, ease-in, ease-out, ease-in-out)
+        Ou bien des courbes de bezier pour un effet plus personnalisé
+    */
+    transition-timing-function: cubic-bezier(0.445, 3, 0.55, 0.95)
+}
+li:nth-child(1) button:hover
+{
+    background-color: darkviolet;
+    transform: rotate(180deg);
+}
+li:nth-child(2) button
+{
+    /* On indique avec ce mot clef que toute les propriétés peuvent être transitionné */
+    transition-property: all;
+    transition-duration: 3s;
+    /* la fonction steps permet une transition non pas fluide mais par étape (ici 5 étapes) */
+    transition-timing-function: steps(5, jump-start);
+}
+li:nth-child(2) button:hover
+{
+    border-radius: 50%;
+    color: red;
+    background-color: black;
+}
+li:nth-child(3) button
+{
+    /* 
+        La propriété transition résumé toute les propriétés de transition en une.
+        Le premier temps indiqué est la durée, le second le délai.
+    */
+    transition: all 2s 0.5s linear;
+}
+li:nth-child(3) button:active
+{
+    /* 
+        box-shadow permet d'ajouter une ombre à un block
+        La première valeur est le décalage horizontal de l'ombre.
+        La seconde le vertical
+        la troisième (optionnelle) le flou de l'ombre.
+        la quatrième (optionnelle) l'étalage de l'ombre.
+        Et enfin la couleur.
+        (On peut ajouter plusieurs ombres en les séparants d'une virgule)
+    */
+    box-shadow: 10px 50px 10px 50px red;
+}
+li:nth-child(4) button
+{
+    transition: all 1s linear;
+}
+/* 
+    Pour éviter que la souri quitte l'élément lorsqu'il rétréci (bouge ou autre)
+    on placera le "hover" sur le parent, celui ci n'étant pas modifié.
+
+    Si on place la transition non pas sur l'élément de base mais sur le hover,
+    La transition ne se fera que dans un sens.
+*/
+li:nth-child(4):hover button
+{
+    transform: scale(0.5);
+}
