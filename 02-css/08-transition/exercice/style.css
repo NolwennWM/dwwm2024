@@ -1,0 +1,136 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background-color: lightblue;
+}
+ul
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li
+{
+    display: inline-block;
+}
+button
+{
+    font-size: 3rem;
+    margin: 20px;
+}
+.i4 button
+{
+    position: relative;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+.i4 button::before, .i4 button::after
+{
+    position: absolute;
+    content: "";
+    height: 5px;
+    width: 0;
+    background-color: blueviolet;
+    transition: all 1s;
+}
+.i4 button::before
+{
+    top: 0;
+    left: 0;
+}
+.i4 button:hover::before, .i4 button:hover::after
+{
+    width: 100%;
+}
+.i4 button::after
+{
+    top: 100%;
+    right: 0;
+}
+.i4 button:active::before, .i4 button:active::after
+{
+    background-color: pink;
+}
+.i4 button:active
+{
+    color: pink;
+}
+
+.i3 button
+{
+    color: white;
+    background-color: orange;
+    border-radius: 3rem;
+    padding: 1rem;
+    transition-property: all;
+    transition-duration: 3s;
+    transition-timing-function: steps(1, jump-start);
+    border: none;
+}
+.i3 button:hover
+{
+    border: white solid 5px;
+}
+.i3 button span
+{
+    color: white;
+    background-color: orange;
+    transition: all;
+    width: 4rem;
+    height: 4rem;
+    display: inline-block;
+    transition-timing-function: linear;
+    transition-duration: 0.3s;
+    border-radius: 4rem;
+}
+.i3 button:hover span
+{
+    color: orange;
+    background-color: white;
+    transform: rotateZ(360deg);
+}
+
+.i2 button
+{
+    cursor: pointer;
+    border: 3px solid gray;
+    transition: all 2s linear;
+    color: gray;
+}
+.i2 button:hover
+{
+    color: red;
+    border-color: red;
+    transform: rotateY(360deg);
+    transition-property: color, border;
+}
+
+.btn3
+{
+    padding: 5px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px black;
+    color: whitesmoke;
+    width: 100px;
+    height: 50px;
+    transition: all 0.5s;
+}
+.btn3:hover
+{
+    transform: translateY(2px);
+    box-shadow: 2px 2px 3px black;
+}
+.btn3:active
+{
+    transform: translateY(2px) rotateX(360deg);
+    transition: 1s;
+}
