@@ -1,0 +1,105 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+/* Sommaire */
+.sommaire
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.sommaire h3
+{
+    margin-bottom: 15px;
+}
+.sommaire > li
+{
+    padding: 20px;
+    list-style: none;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+.sommaire li
+{
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.sommaire > :nth-child(1)
+{
+    background-color: darkseagreen;
+}
+.sommaire > :nth-child(2)
+{
+    background-color:plum;
+}
+.sommaire > :nth-child(3)
+{
+    background-color:skyblue;
+}
+.sommaire > :nth-child(4)
+{
+    background-color:tomato;
+}
+.sommaire > :nth-child(5)
+{
+    background-color:darksalmon;
+}
+.sommaire > :nth-child(6)
+{
+    background-color:goldenrod;
+}
+/* Fin Sommaire */
+/* include et require */
+header{
+    grid-column: 1/2;
+    background-color: cadetblue;
+    text-align: center;
+    padding: 1rem;
+}
+nav{
+    grid-column: 1/2;
+    background-color: aquamarine;
+    position: relative;
+    padding: 0.5rem;
+    list-style: none;
+}
+nav ul{
+    position: sticky;
+    top: 20px;
+}
+main{
+    background-color: beige;
+    padding: 1vw;
+}
+main.includeNav{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    padding: 0;
+}
+main.includeNav nav{
+    grid-row: 1/-1;
+}
+footer{
+    background-color: rgb(163, 182, 131);
+    text-align: center;
+    padding: 1rem;
+}
+footer a{
+    font-size: 2rem;
+}
+p{
+    margin: 5rem auto;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-size: clamp(2rem, 20vh, 3rem);
+}
