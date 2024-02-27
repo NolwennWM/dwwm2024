@@ -1,0 +1,103 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#loader{
+    display: flex;
+}
+.point, .cercle, #marquee{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.dot{
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    margin: 0 15px;
+    animation: loader infinite 0.3s alternate;
+}
+.d2{
+    animation-delay: 0.05s;
+}
+.d3{
+    animation-delay: 0.1s;
+}
+@keyframes loader{
+    100%{
+        transform: translateY(-30px);
+    }
+}
+.cercle{
+    background-color: black;
+}
+.circle{
+    display: block;
+    position: relative;
+    width: 250px; 
+    height: 250px;
+    border-radius: 50%;
+    border: 7px solid transparent;
+    border-top-color: red;
+    animation: spin 2s linear infinite;
+}
+.circle::before, .circle::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 7px solid transparent;
+}
+.circle::before{
+    top: 7px;
+    left: 7px;
+    bottom: 7px;
+    right: 7px;
+    border-top-color: crimson;
+    animation: spin 3s linear infinite;
+}
+.circle::after{
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    border-top-color: pink;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+#marquee{
+    background-color: black;
+    color: whitesmoke;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+#marquee > p{
+    font-size: 100px;
+    line-height: 1.3em;
+    font-family: monospace;
+    padding: 24px 0;
+    white-space: nowrap;
+    animation: marquee 25s infinite linear;
+}
+#marquee > p::after{
+    content: "Il y a 10 types de personnes, ceux qui comprennent cette blague et ceux qui ne la comprennent pas.";
+}
+@keyframes marquee {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}

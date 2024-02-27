@@ -1,0 +1,24 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes texte 
+{
+    from{
+        left: 150%;
+    }    
+    to
+    {
+        left: -350%;
+    }
+}
+div
+{
+    position: absolute;
+    top: 50%;
+    font-size: 100px;
+    white-space: nowrap;
+    animation: texte 20s linear infinite;
+}

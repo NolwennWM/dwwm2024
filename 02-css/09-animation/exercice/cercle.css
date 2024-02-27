@@ -1,0 +1,90 @@
+@keyframes anime1 
+{
+    0%
+    {
+        transform: rotate(0);
+    }    
+    25%
+    {
+        transform: rotate(90deg);
+    }
+    50%
+    {
+        transform: rotate(180deg);
+    }
+    75%
+    {
+        transform: rotate(270deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+@keyframes anime2 
+{
+    0%
+    {
+        transform: rotate(0);
+    }    
+    25%
+    {
+        transform: rotate(70deg);
+    }
+    50%
+    {
+        transform: rotate(200deg);
+    }
+    75%
+    {
+        transform: rotate(280deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+body
+{
+    position: relative;
+}
+div
+{
+    position: absolute;
+    border-radius: 50%;
+    border: 10px;
+    border-style: solid;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    margin: 20px;
+    animation: anime1 1s linear infinite;
+}
+div:nth-last-of-type(1)
+{
+    border-top-color: pink;
+    top: 50px;
+    left: 50px;
+}
+div:nth-last-of-type(2)
+{
+    border-top-color: blue;
+    top: 40px;
+    left: 40px;
+    height: 220px;
+    width: 220px;
+    animation: anime2 2s linear infinite;
+}
+div:nth-last-of-type(3)
+{
+    border-top-color: red;
+    top: 30px;
+    left: 30px;
+    height: 240px;
+    width: 240px;
+    animation: anime2 3s linear infinite;
+}
