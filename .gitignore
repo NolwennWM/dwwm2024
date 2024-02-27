@@ -1,0 +1,4 @@
+node_modules/
+vendor/
+*.zip
+*.mp4
