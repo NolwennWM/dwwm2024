@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS / SCSS</title>
+    <link rel="stylesheet" href="./css/test.css">
+</head>
+<body>
+    <header>
+        <h1>Les bases de SASS et SCSS</h1>
+    </header>
+    <main>
+        <ul>
+            <li>
+                Pour installer SASS on utilisera <br>
+                <strong>npm install -g sass</strong>
+            </li>
+            <li>
+                Pour compiler du sass/scss en css on utilisera la commande <br>
+                <strong>sass cheminVerFichierSource.scss cheminVersFichierCible.sass</strong>
+            </li>
+            <li>
+                Pour éviter de relancer la commande à chaque modification, on peut y ajouter --watch <br>
+                <strong>sass --watch cheminVerFichierSource.scss cheminVersFichierCible.sass</strong>
+                <br>
+                par exemple ici :
+                <code>sass --watch ./scss/test.scss ./css/style.css</code>
+            </li>
+            <li>
+                On peut surveiller tout un dossier : <br>
+                <strong>sass --watch nomDossierSource/:nomDossierCible/</strong>
+            </li>
+            <li>
+                On peut choisir de minimifier notre compilation avec l'option "--style compressed" <br>
+                <strong>sass --watch nomDossierSource/:nomDossierCible/ --style compressed</strong>
+            </li>
+        </ul>
+        <section class="sass">
+            <h2> <span>SASS</span> </h2>
+            <p class="superP">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium quibusdam quisquam perspiciatis placeat. Illum, dolore beatae! Praesentium, molestiae beatae vero, quae inventore tempora nobis enim, distinctio sapiente illum veniam rerum?
+            </p>
+        </section>
+    </main>
+    <div class="copy">&copy;</div>
+    <div class="menu">Menu</div>
+    <ul>
+        <li class="truc1">
+            Truc 1
+        </li>
+        <li class="truc2">
+            Truc 2
+        </li>
+        <li class="truc3">
+            Truc 3
+        </li>
+        <li class="truc4">
+            Truc 4
+        </li>
+        <li class="truc5">
+            Truc 5
+        </li>
+    </ul>
+</body>
+</html>
