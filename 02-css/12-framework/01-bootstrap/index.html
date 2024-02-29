@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+</head>
+<body class="bg-secondary">
+    <!-- 
+        Bootstrap utiliser des classes prédéfinies afin d'appliquer du CSS.
+        bg-** permet d'ajouter un background color
+        bootstrap utilise un ensemble de couleur prédéfini.
+            primary, secondary, success, info, warning, danger, light, dark, white, black.
+
+    -->
+    <header class="container-fluid bg-primary">
+        <!-- 
+            Les container-fluid prennent 100% de la taille avec un padding.
+            les container se centrent avec une marge et leur taille s'adapte à toute taille d'écran.
+            p-* permet d'ajouter un padding.
+            allant de 0 à 5
+            On peut préciser une direction avec t, b, x, y... (pb-3...)
+            Et cela fonctionne de même avec "m" pour margin
+        -->
+        <div class="container p-2">
+            <!-- 
+                text-center permet de choisir l'alignement du texte.
+                Sur certaines classes bootstrap, on peut ajouter "sm", "md", "lg", "xl"
+                Cela indique que la classe doit se déclencher qu'à partir d'une certaine taille d'écran.
+                text-warning (ou autre mot clef de couleur) permet de changer la couleur du texte
+            -->
+            <h1 class="text-md-center text-warning">Apprenons Bootstrap</h1>
+        </div>
+    </header>
+    <div class="container bg-dark">
+        <!-- 
+            Bootstrap utilise un système de grille pour rendre les sites responsives.
+            On commencera généralement par un container dans lequel on ira placer des "row".
+            La grille de bootstrap est divisé en 12 colonnes.
+            On ira placer dans nos "row" des balises auxquelles on indiquera le nombre de colonne à prendre.
+        -->
+        <div class="row">
+            <!-- 
+                J'indique à ma div qu'elle doit par défaut prendre 12 colonnes.
+                Puis si l'écran est assez grand, de n'en prendre que 6.
+                Et si l'écran est vraiment grand, d'en prendre 4
+            -->
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <article class="bg-light text-dark p-1">
+                    <h2 class="text-center">Un titre très important</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur optio voluptatibus? Minima hic aperiam vero dignissimos ducimus porro quasi odit quam et. Nesciunt facilis maiores natus numquam nemo ullam.
+                        <br>
+                        <span class="text-danger fst-italic fw-bold fs-4 d-sm-none">Message Secret pour mobile</span>
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success w-75">Super Bouton</button>
+                    </div>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <article class="bg-light text-dark p-1">
+                    <h2 class="text-center">Un titre très important</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur optio voluptatibus? Minima hic aperiam vero dignissimos ducimus porro quasi odit quam et. Nesciunt facilis maiores natus numquam nemo ullam.
+                        <br>
+                        <span class="text-danger fst-italic fw-bold fs-4 d-sm-none">Message Secret pour mobile</span>
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success w-75">Super Bouton</button>
+                    </div>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <article class="bg-light text-dark p-1">
+                    <h2 class="text-center">Un titre très important</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur optio voluptatibus? Minima hic aperiam vero dignissimos ducimus porro quasi odit quam et. Nesciunt facilis maiores natus numquam nemo ullam.
+                        <br>
+                        <span class="text-danger fst-italic fw-bold fs-4 d-sm-none">Message Secret pour mobile</span>
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success w-75">Super Bouton</button>
+                    </div>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <article class="bg-light text-dark p-1">
+                    <h2 class="text-center">Un titre très important</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur optio voluptatibus? Minima hic aperiam vero dignissimos ducimus porro quasi odit quam et. Nesciunt facilis maiores natus numquam nemo ullam.
+                        <br>
+                        <span class="text-danger fst-italic fw-bold fs-4 d-sm-none">Message Secret pour mobile</span>
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success w-75">Super Bouton</button>
+                    </div>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <article class="bg-light text-dark p-1">
+                    <h2 class="text-center">Un titre très important</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur optio voluptatibus? Minima hic aperiam vero dignissimos ducimus porro quasi odit quam et. Nesciunt facilis maiores natus numquam nemo ullam.
+                        <br>
+                        <span class="text-danger fst-italic fw-bold fs-4 d-sm-none">Message Secret pour mobile</span>
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success w-75">Super Bouton</button>
+                    </div>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <article class="bg-light text-dark p-1">
+                    <h2 class="text-center">Un titre très important</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur optio voluptatibus? Minima hic aperiam vero dignissimos ducimus porro quasi odit quam et. Nesciunt facilis maiores natus numquam nemo ullam.
+                        <br>
+                        <span class="text-danger fst-italic fw-bold fs-4 d-sm-none">Message Secret pour mobile</span>
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success w-75">Super Bouton</button>
+                    </div>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <article class="bg-light text-dark p-1">
+                    <h2 class="text-center">Un titre très important</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur optio voluptatibus? Minima hic aperiam vero dignissimos ducimus porro quasi odit quam et. Nesciunt facilis maiores natus numquam nemo ullam.
+                        <br>
+                        <span class="text-danger fst-italic fw-bold fs-4 d-sm-none">Message Secret pour mobile</span>
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success w-75">Super Bouton</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide w-50">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../../../assets/images/paysage/montagne.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../../../assets/images/paysage/lava.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../../../assets/images/paysage/space.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</body>
+</html>

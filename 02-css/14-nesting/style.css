@@ -1,0 +1,128 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+    Depuis l'été 2023,
+    Il est possible d'utiliser le nesting dans le CSS.
+    Seulement attention, si des navigateurs ancien ou pas à jour utilise votre site. 
+    Cela ne fonctionnera pas.
+*/
+body
+{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    /* 
+        Le nesting consiste à placer un selecteur dans un autre.
+        Ce qui suis équivaut à :
+        body > header{}
+    */
+    > header
+    {
+        background-color: lightgreen;
+        text-align: center;
+        padding: 1rem;
+        /* 
+            On peut optionnellement ajouté le symbole "&" qui représente le selecteur parent.
+            body > header > h1{}
+        */
+        & > h1
+        {
+            font-size: 3rem;
+        }
+        > p 
+        {
+            font-size: 1.5rem;
+        }
+    }
+    /* 
+        équivaut à "body main{}" 
+        Sur safari il est obligatoire de faire précéder le nom d'une balise par le nesting opérator "&"
+        sur chrome ou firefox c'est optionnel
+    */
+    & main
+    {
+        background-color: lightcyan;
+        width: 80%;
+        margin: auto;
+        /* équivaut à "body main section{}" */
+        & section
+        {
+            margin: 20px 50px;
+            padding: 10px;
+            border-radius: 10px;
+            /* body main section h2{} */
+            & h2
+            {
+                text-indent: 20px;
+                text-decoration: underline dashed red;
+            }
+            /* body main section > p{} */
+            >p
+            {
+                margin: 1em auto;
+                text-align: justify;
+            }
+            /* 
+                Attention de bien mettre le nesting selector :
+                section{&:first-child} = section:first-child
+                section{:first-child} = section :first-child
+            */
+            &:first-child, &:last-child
+            {
+                background-color: lightsalmon;
+                box-shadow: 5px 5px 3px rgba(136, 84, 64, 0.4);
+            }
+            &:first-child span
+            {
+                font-family: monospace;
+            }
+            &:nth-child(2)
+            {
+                display: grid;
+                gap: 10px;
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                >h2
+                {
+                    grid-column: 1/-1;
+                }
+                & article
+                {
+                    border: 2px solid black;
+                    border-radius: 5px;
+                    padding: 5px;
+                    background-color: antiquewhite;
+                    box-shadow: 5px 5px 3px rgba(139, 131, 120, 0.5);
+                    & h3
+                    {
+                        text-align: center;
+                        font-size: 1.5em;
+                    }
+                    & footer
+                    {
+                        text-align: right;
+                    }
+                }
+            }
+            &:last-child
+            {
+                & h2
+                {
+                    text-decoration: underline dotted blue;
+                    & + p
+                    {
+                        font-size: 1.2em;
+                        & ~ p
+                        {
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    > footer
+    {}
+}

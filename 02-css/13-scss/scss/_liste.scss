@@ -1,0 +1,27 @@
+// "..." permet de créer une variable listant tous les paramètres donnés au mixin.
+@mixin liste($li...)
+{
+    // @debug permet d'afficher dans la console le contenu d'une variable ou un message
+    @debug $li;
+    // @for permet de créer une boucle, la répétition d'une même action.
+    @for $i from 0 to length($li)
+    {
+        @debug $i;
+        // #{} permet d'afficher la valeur d'une variable en tant que selecteur.
+        /* 
+            nth() permet de selectionner un élément dans une liste.
+        */
+        #{nth($li, $i+1)}
+        {
+            font-size: 30px + $i*10;
+        }
+    }
+    // @warn "Attention";
+    // @error "BOOM!";
+}
+
+ul
+{
+    background-color: cornflowerblue;
+    @include liste(".truc1", ".truc2", ".truc3", ".truc4", ".truc5");
+}
