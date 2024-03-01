@@ -124,5 +124,34 @@ body
         }
     }
     > footer
-    {}
+    {
+        background-color: lightskyblue;
+        padding: 20px;
+        font-size: 1.5em;
+        & ul
+        {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+        }
+    }
+}
+/* classes */
+.strong
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    /* 
+        Il est aussi possible d'utiliser le nesting selector en fin de selecteur.
+        cela afin de faire varier les règles en fonction du parent.
+        Ici ma classe strong n'aura pas le même effet si elle est dans le header ou le main.
+    */
+    :is(header) &
+    {
+        text-decoration: underline;
+    }
+    :is(main) &
+    {
+        font-weight: bold;
+    }
 }
