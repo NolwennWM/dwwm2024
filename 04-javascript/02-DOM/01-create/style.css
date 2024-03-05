@@ -1,0 +1,21 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    text-align: center;
+}
+header, main, footer
+{
+    padding: 1rem;
+}
+header{background-color: darkorchid;}
+main{background-color: lightsalmon;}
+main p{margin:2rem 0;}
+footer{background-color: steelblue;}
