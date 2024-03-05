@@ -346,10 +346,68 @@ a7[3] = tmp;
 // ou alors :
 [a7[0], a7[3]] = [a7[3], a7[0]];
 
-// ? -------------- Objets ------------------
+// ? -------------- Objets -------------------
+/* 
+    Les objets ressemblent à des tableaux, mais sont déclaré avec {}
+    Au lieu d'être indexé numériquement,
+    On utilisera des noms de propriété :
+*/
+let o1 = {nom: "Dupont", age: 45, loisir: ["bowling", "mahjong"]};
+// Pour accèder à une propriété, on indique le nom de la variable suivi d'un "." et du nom de la propriété
+console.log(o1.nom, o1.age, o1.loisir);
+// On peut aussi y accèder comme un tableau:
+console.log(o1["nom"], o1["age"], o1["loisir"]);
+
+let o2 = [{vegetal:{legume:{haricot:["vert"]}}}];
+console.log(o2[0].vegetal.legume.haricot[0]);
+
 // ? -------------- Booleans -----------------
+// Les booleans n'acceptent que deux valeur "true" ou "false";
+let b1 = true, b2 = false;
+
+// On peut les faire apparaître via des conditions :
+console.log("1 < 2 :", 1<2);
+console.log("1 > 2 :", 1>2);
+console.log("1 <= 2 :", 1<=2);
+console.log("1 >= 2 :", 1>=2);
+
+// Pour comparer une égalité, il faut au moins 2 "="
+console.log("1 == '1' :", 1 == '1');
+// Avec 3, le type sera aussi comparé
+console.log("1 === '1' :", 1 === '1');
 
 
+console.log("1 != '1' :", 1 != '1');
+console.log("1 !== '1' :", 1 !== '1');
+
+// Un point d'exclamation devant un boolean va inverser le résultat
+console.log("b1 :", b1, "b2 :", b2);
+console.log("!b1 :", !b1, "!b2 :", !b2);
+
+// On va pouvoir vérifier plusieurs cas à la fois avec "&&" et "||"
+// Avec "&&" il faut que les deux conditions soient vrai pour obtenir "true"
+console.log(
+    true && true,
+    true && false,
+    false && true,
+    false && false
+);
+// Avec "||" il suffit qu'une des conditions soient vrai pour obtenir "true"
+console.log(
+    true || true,
+    true || false,
+    false || true,
+    false || false
+);
+
+// Le principe de "court-circuit" permet de ne pas vérifier une instruction selon le résultat de la première.
+let nb = 0;
+// avec "&&" si la première instruction est fausse, la seconde ne sera pas vérifié
+console.log(true && ++nb, nb);
+console.log(false && ++nb, nb);
+// avec "||" si la première est vrai, la seconde n'est pas vérifié.
+console.log(false || ++nb, nb);
+console.log(true || ++nb, nb);
 
 
 
