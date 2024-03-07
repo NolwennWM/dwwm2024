@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* même que cours selecteur */
 body
 {
     display: grid;
@@ -42,4 +43,21 @@ aside
 {
     position: absolute;
     left: -100vw;
+}
+/* Ajout : */
+.banane 
+{
+    color: yellow;
+}
+#mainTitle
+{
+    border: 5px solid royalblue;
+}
+#mainTitle2
+{
+    border: 5px double palevioletred;
+}
+a[data-color]::after
+{
+    content: attr(data-color);
 }
