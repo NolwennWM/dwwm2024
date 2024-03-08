@@ -61,3 +61,47 @@ h1.removeEventListener("click", test);
 /* 
     Petit défaut, on ne peut retirer que les eventListener où l'on utilise une fonction nommé.
 */
+// ? ---------------------- Options --------------------------
+
+const btn1 = document.querySelector('.div1 button');
+const input1 = document.querySelector('.div1 input');
+/* 
+    On peut ajouter des options au addEventListener.
+    Pour cela on donnera en troisième argument, un objet contenant ces options.
+
+    l'option "once" permet de ne déclencher un évènement qu'une seule fois.
+*/
+btn1.addEventListener("click", ()=>h1.textContent=input1.value, {once:true});
+/* 
+    Si plusieurs évènements sont déclenché par une même action,
+    Alors l'ordre sera défini du parent le plus proche au plus éloigné.
+
+    JS fonctionne en deux phases, une phase de "capture" où il vérifie les évènements à déclencher, allant des parents vers les enfants.
+    Et une phase de "bulle" qui remonte des enfants vers les parents en activant les évènements.
+*/
+const div4 = document.querySelector('.div4');
+const gp = div4.querySelector('.grandParent');
+const pa = div4.querySelector('.parent');
+const en = div4.querySelector('.enfant');
+/* 
+    Avec l'option "capture" à true,
+    Nous indiquons à un évènement de se déclencher pendant la phase de capture,
+    donc avant les autres.
+*/
+div4.addEventListener("click", ()=>console.log("div 4"), {capture: true});
+gp.addEventListener("click", ()=>console.log("Grand Parent"));
+pa.addEventListener("click", (event)=>{
+    console.log("Parent");
+    event.stopPropagation();
+});
+en.addEventListener("click", ()=>console.log("Enfant"));
+/* 
+    La méthode d'évènement ".stopPropagation()" 
+    permet d'arrêter une suite d'évènement.
+
+    La méthode d'évènement ".preventDefault()"
+    permet de désactiver l'évènement par défaut d'un élément HTML.
+    (la soumission d'un formulaire, l'activation d'un lien...)
+*/
+const menu5 = document.querySelector('.menu5 a');
+menu5.addEventListener("click", e=>e.preventDefault());
