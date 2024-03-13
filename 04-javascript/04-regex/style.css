@@ -1,0 +1,47 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.coordonnées, .id {
+    border: 1px solid gray;
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    display: grid;
+    grid-template-columns: 2;
+}
+
+input {
+    position: relative;
+    left: 10px;
+    width: 300px;
+    height: 25px;
+}
+
+label {
+    position: relative;
+    top: 15px;
+    left: 10px;
+}
+
+.id {
+    top: 50%;
+    height: 250px;
+}
+
+.setstrong {
+    border: 1px solid black;
+    position: relative;
+    top: 5px;
+    left: 10px;
+    height: 20px;
+    width: 300px;
+}
+
+.strong {
+    height: 100%;
+}
