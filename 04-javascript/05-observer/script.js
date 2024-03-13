@@ -45,7 +45,7 @@ observer.observe(main);
 */
 function setIndicator(entries)
 {
-    console.log(entries);
+    // console.log(entries);
     /* 
         Au chargement de la page, la fonction est appelé une première fois,
         Cela pour indiquer si les éléments observés sont déjà présent ou non.
@@ -53,7 +53,7 @@ function setIndicator(entries)
     */
     const entry = entries[0];
 
-    console.log(entry);
+    // console.log(entry);
 
     if(entry.isIntersecting)
     {
@@ -72,7 +72,7 @@ function setIndicator(entries)
 */
 function indicatorAnimation()
 {
-    console.log("SCROOOLLL!!");
+    // console.log("SCROOOLLL!!");
     /* 
         scrollY représente le nombre de pixel scrollé
         offsetTop la position de l'élément par rapport au haut de la page
@@ -84,7 +84,7 @@ function indicatorAnimation()
             "nombre.toFixed(n)" retourne un string d'un nombre avec "n" chiffre après la virgule
         */
         const prc = ((window.scrollY - main.offsetTop)/main.scrollHeight).toFixed(2);
-        console.log(prc);
+        // console.log(prc);
         indicator.style.transform = `scale(${prc})`;
     }
     else
