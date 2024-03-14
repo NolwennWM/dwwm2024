@@ -1,0 +1,71 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --fond: antiquewhite;
+    --text: #333;
+}
+body
+{
+    background-color: var(--fond);
+    color: var(--text);
+}
+h1{text-align: center;}
+main{padding: 20px 10%;}
+main p{text-align: justify;}
+.switch
+{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input{display: none;}
+.slider
+{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition-duration: .4s;
+}
+.slider::before
+{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition-duration: .4s;
+}
+input:checked + .slider{background-color: #333;}
+input:focus + .slider{box-shadow: 0 0 1px #333;}
+input:checked + .slider::before{transform: translateX(26px);}
+.slider.round{border-radius: 34px;}
+.slider.round::before{border-radius: 50%;}
+
+/* Il est possible de faire un changement de thème avec une media query */
+/* @media (prefers-color-scheme: dark)
+{
+    body
+    {
+        background-color: #333;
+        color: antiquewhite;
+    }
+} */
+/* Une autre solution serait de jouer sur une classe ajouté au body */
+body.dark
+{
+    background-color: #333;
+    color: antiquewhite;
+}
+body.dark h1{color: crimson;}
