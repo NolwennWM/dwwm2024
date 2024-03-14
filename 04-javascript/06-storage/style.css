@@ -69,3 +69,32 @@ body.dark
     color: antiquewhite;
 }
 body.dark h1{color: crimson;}
+
+/* Exercice */
+body.blue
+{
+    background-color: blue;
+    color: red;
+    h1
+    {
+        color: green;
+    }
+}
+body.green
+{
+    background-color: green;
+    color: goldenrod;
+    h1
+    {
+        color: blue;
+    }
+}
+body.orange
+{
+    background-color: orange;
+    color: goldenrod;
+    h1
+    {
+        color: blue;
+    }
+}
