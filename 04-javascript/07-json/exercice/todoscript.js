@@ -66,5 +66,6 @@ function saveTask()
    document.querySelectorAll("#taskList .task").forEach(taskItem=>{
       task.push({text: taskItem.querySelector(".taskText").innerText, completed: taskItem.classList.contains("completed")})
    });
+   console.log(task);
    localStorage.setItem("task", JSON.stringify(task));
 }
