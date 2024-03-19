@@ -1,0 +1,17 @@
+{
+    "fr":{
+        "name": "Français",
+        "title": "Mon Site Génial",
+        "description": "Ce site vous propose un contenu des plus passionant"
+    },
+    "en":{
+        "name": "Anglais",
+        "title": "My Awesome Site",
+        "description": "This site offers you the most exciting content"
+    },
+    "jp":{
+        "name": "Japonais",
+        "title": "私の素晴らしいサイト",
+        "description": "このサイトはあなたに最もエキサイティングなコンテンツを提供します"
+    }
+}
