@@ -1,0 +1,32 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.exo{
+    min-height: 100vh;
+}
+.exercice1 ul{
+    padding-left: 1rem;
+}
+.exercice1 main{
+    display: flex;
+    justify-content:space-around;
+}
+.exercice1 main > ul{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+.exercice2{
+    text-align: center;
+}
+.exercice3{
+    text-align: center;
+}
+.exercice3 img{
+    width: 80%;
+    height: 85vmin;
+    object-fit: contain;
+}

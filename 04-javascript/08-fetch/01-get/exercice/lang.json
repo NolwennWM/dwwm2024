@@ -1,0 +1,12 @@
+{
+    "welcome_message":{
+        "fr": "Bienvenue",
+        "en": "Welcome",
+        "jap": "いらっしゃいます"
+    },
+    "text":{
+        "fr": "Nous vous souhaitons la bienvenue !",
+        "en": "We welcome you !",
+        "jap": "ようこそ !"
+    }
+}
