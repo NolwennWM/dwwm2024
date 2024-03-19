@@ -1,0 +1,33 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+header
+{
+    background-color: dodgerblue;
+    text-align: center;
+    grid-column: 1/3;
+}
+nav
+{
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+main
+{
+    padding: 1rem;
+    background-color: lightpink;
+}
+main .video{max-width: 50%;}
+video{width: 100%;}
