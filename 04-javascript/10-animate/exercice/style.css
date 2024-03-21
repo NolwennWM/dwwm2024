@@ -1,0 +1,35 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div2
+{
+    height: 110px;
+    width: 10px;
+    background-color: black;
+}
+.div1, .div3
+{
+    height: 100px;
+    width: 500px;
+    font-size: 75px;
+    overflow: hidden;
+}
+.div1
+{
+    text-align: end;
+}
+p
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
