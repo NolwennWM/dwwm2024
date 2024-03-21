@@ -1,0 +1,31 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+h1 {
+    font-size: 4.8vw;
+    width: fit-content;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+h1 span {
+    display: inline-block;
+    width: fit-content;
+    overflow: hidden;
+    line-height: 2;
+}
+h1 span:first-child {
+    text-indent: 100%;
+    border-right: 1vw solid #000;
+}
+h1 span:last-child {
+    text-indent: -100%;
+    /* border-left: .5vw solid #000; */
+}
