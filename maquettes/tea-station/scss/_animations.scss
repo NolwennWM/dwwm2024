@@ -1,0 +1,81 @@
+
+/* 
+==========
+Animation
+==========
+*/
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(-200px);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translateX(50px);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(200px);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translateX(-50px);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes show {
+    0% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+

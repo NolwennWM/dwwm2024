@@ -1,0 +1,49 @@
+@use "variables" as v;
+
+/* 
+==========
+Header 
+==========
+*/
+.header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../assets/image/main-bcg.jpeg') no-repeat center/cover fixed;
+    position: relative;
+    /*  animation */
+    overflow-x: hidden;
+
+    .banner {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h2 {
+            font-family: v.$ff-secondary;
+            color: v.$clr-primary;
+            /* animation */
+            animation: slideFromLeft 3s ease-in-out 1;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            color: v.$clr-white;
+            margin-top: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            /* animation */
+            animation: slideFromRight 3s ease-in-out 1;
+        }
+    }
+}
+
+/** Content divider */
+.content-divider {
+    height: 0.5rem;
+    background: linear-gradient(to right,
+            v.$clr-primary,
+            #e9b949,
+            v.$clr-primary);
+}

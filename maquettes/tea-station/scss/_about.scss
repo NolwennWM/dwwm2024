@@ -1,0 +1,44 @@
+@use "variables" as v;
+
+/* 
+==========
+About
+==========
+*/
+.about-img,
+.about-info {
+    padding: 2rem 0;
+}
+
+.about-picture-container {
+    background: v.$clr-primary;
+    border: 0.5rem solid v.$clr-primary;
+    max-width: 30rem;
+    overflow: hidden;
+
+    .about-picture {
+        transition: v.$transition;
+    }
+
+    &:hover .about-picture {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+.about-text {
+    max-width: 26rem;
+    color: v.$clr-gray-5;
+}
+
+@media screen and (min-width: 992px) {
+
+    .about-img,
+    .about-info {
+        float: left;
+    }
+
+    .about-info {
+        padding-left: 2rem;
+    }
+}
