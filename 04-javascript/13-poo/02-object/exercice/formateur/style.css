@@ -1,0 +1,16 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 2rem;
+    overflow: hidden;
+    height: 100vh;
+}
+div.appli{
+    width: 50vw;
+    height: 50vh;
+    margin: auto;
+    border: 1px solid black;
+}
