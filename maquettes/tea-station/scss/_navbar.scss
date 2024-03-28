@@ -1,0 +1,80 @@
+@use "variables" as v;
+
+/* 
+==========
+Navbar
+==========
+*/
+.nav-btn {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    font-size: 2.5rem;
+    z-index: 1;
+    color: v.$clr-primary;
+    cursor: pointer;
+    animation: bounce 1s linear infinite;
+}
+
+#navbar {
+    display: none;
+
+    &:checked~nav.navbar {
+        transform: translateX(0);
+    }
+}
+
+.navbar {
+    background: #fff;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: v.$clr-gray-10;
+    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: v.$transition;
+
+    .nav-close {
+        float: right;
+        margin: 0.25rem 0.5rem;
+        color: #f29c9c;
+        font-size: 2.5rem;
+        cursor: pointer;
+        transition: v.$transition;
+
+        &:hover {
+            color: #bb2525;
+        }
+    }
+
+    .nav-list {
+        clear: right;
+        list-style: none;
+
+        .nav-item {
+            display: block;
+            font-size: 1.5rem;
+            padding: 0.25rem 1rem;
+            text-transform: uppercase;
+            color: v.$clr-gray-5;
+            letter-spacing: v.$spacing;
+            transition: v.$transition;
+
+            &:hover {
+                background: v.$clr-primary-light;
+                padding-left: 1.5rem;
+                border-left: 0.25rem solid v.$clr-primary;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .navbar {
+        width: 30vw;
+        max-width: 25rem;
+    }
+}

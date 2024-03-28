@@ -1,0 +1,84 @@
+@use "variables" as v;
+
+/* 
+==========
+Contact
+==========
+*/
+.contact {
+    background: v.$clr-gray-10;
+
+    .contact-item,
+    .contact-form {
+        margin: 1rem 0;
+    }
+
+    .contact-item {
+        margin-bottom: 1.75rem;
+
+        .contact-title {
+            color: v.$clr-primary;
+            font-weight: 400;
+        }
+    }
+
+    .contact-form {
+        background: v.$clr-white;
+        border-radius: v.$radius;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: v.$transition;
+        max-width: 35rem;
+
+        &:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            top: 1.25rem;
+            color: v.$clr-gray-5;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .form-group {
+            padding: 1rem 1.5rem;
+
+            .form-control {
+                background: v.$clr-gray-10;
+                width: 100%;
+                border: none;
+                border-radius: v.$radius;
+                padding: 0.75rem 1rem;
+                margin-bottom: 1.25rem;
+
+                &::placeholder {
+                    font-family: v.$ff-primary;
+                    color: v.$clr-gray-5;
+                    letter-spacing: v.$spacing;
+                    text-transform: uppercase;
+                }
+
+                &:focus {
+                    outline: 2px solid v.$clr-gray-5;
+                }
+            }
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            border-bottom-left-radius: v.$radius;
+            border-bottom-right-radius: v.$radius;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .contact-info,
+    .contact-form {
+        width: 50%;
+        float: left;
+    }
+}

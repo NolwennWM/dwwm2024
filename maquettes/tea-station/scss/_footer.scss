@@ -1,0 +1,29 @@
+@use "variables" as v;
+
+/* 
+==========
+Footer
+==========
+*/
+.footer {
+    background: #222;
+    text-align: center;
+    color: v.$clr-white;
+    .social-icon {
+        color: v.$clr-white;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        &:hover {
+            color: v.$clr-primary;
+        }
+    }
+    .footer-text {
+        margin-top: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: v.$spacing;
+        font-weight: 400;
+        .company {
+            color: v.$clr-primary;
+        }
+    }
+}

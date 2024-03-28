@@ -1,0 +1,84 @@
+@use "variables" as v;
+
+/* 
+==========
+Services
+==========
+*/
+.services-title {
+    margin-top: 4rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.service-card {
+    margin: 2rem 0;
+    border-radius: v.$radius;
+    background: v.$clr-gray-10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: v.$transition;
+
+    &:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transform: scale(1.02);
+    }
+
+    .service-img-container {
+        position: relative;
+
+        .service-img {
+            height: 17rem;
+            object-fit: cover;
+            border-top-left-radius: v.$radius;
+            border-top-right-radius: v.$radius;
+        }
+
+        .service-icon {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            font-size: 2rem;
+            color: v.$clr-primary;
+            background: v.$clr-primary-light;
+            padding: 0.25rem 0.6rem;
+            border-radius: 50%;
+            transform: translate(-50%, 50%);
+            border: 0.375rem solid v.$clr-gray-10;
+        }
+    }
+
+    .service-info {
+        text-align: center;
+        padding: 3rem 1rem 2.5rem 1rem;
+
+        p {
+            max-width: 20rem;
+            color: v.$clr-gray-5;
+            margin: 0 auto;
+        }
+
+        .service-btn {
+            font-size: 0.75rem;
+            text-transform: capitalize;
+            padding: 0.375rem 0.5rem;
+            border-radius: v.$radius;
+            margin-top: 1.25rem;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .service-card {
+        float: left;
+        width: 45%;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .service-card {
+        float: left;
+        width: 30%;
+        margin-right: 3.333%;
+    }
+}

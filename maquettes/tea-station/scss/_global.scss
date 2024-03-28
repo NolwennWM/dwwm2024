@@ -1,0 +1,148 @@
+@use "variables" as v;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: v.$ff-primary;
+    background: v.$clr-white;
+    color: v.$clr-gray-1;
+    line-height: 1.5;
+    /* font-size pour mobile d'abord*/
+    font-size: 0.875rem;
+
+
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: v.$spacing;
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 0.875rem;
+}
+
+p {
+    margin-bottom: 1.25rem;
+}
+
+/** More global css */
+.btn {
+    background: v.$clr-primary;
+    color: v.$clr-white;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: v.$spacing;
+    display: inline-block;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        color: v.$clr-primary;
+        background: v.$clr-primary-light;
+    }
+}
+
+.banner-btn {
+    outline: 0.125rem solid v.$clr-primary;
+    outline-offset: 0.25rem;
+    transition: v.$transition;
+    font-size: 1.25rem;
+    padding: 1rem 1.75rem;
+    animation: show 3s linear 1;
+}
+
+.section-title {
+    margin-bottom: 2rem;
+
+    h3 {
+        font-family: v.$ff-secondary;
+        color: v.$clr-primary;
+    }
+}
+
+.section-center {
+    padding: 4rem 0;
+    width: 85vw;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+/* Pour les grand écrans */
+@media screen and (min-width: 800px) {
+    body {
+        font-size: 1rem;
+
+
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        line-height: 1;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .section-center {
+        width: 95vw;
+        padding: 4rem 1rem;
+    }
+}
+
+/*  Check clearfix hack sur Google */
+.clearfix::after,
+.clearfix::before {
+    content: '';
+    clear: both;
+    display: table;
+}

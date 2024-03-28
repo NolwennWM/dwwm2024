@@ -1,0 +1,70 @@
+@use "variables" as v;
+
+/* 
+==========
+Products
+==========
+*/
+.products-section {
+    background: v.$clr-gray-10;
+
+    .products-info,
+    .products-inventory {
+        padding: 1rem 0;
+    }
+
+    .product-text {
+        color: v.$clr-gray-5;
+        max-width: 26rem;
+    }
+
+    .product {
+        margin-bottom: 2rem;
+
+        .product-img {
+            border-radius: v.$radius;
+            margin-bottom: 2rem;
+            height: 17rem;
+            object-fit: cover;
+        }
+
+        .product-price {
+            color: v.$clr-primary;
+        }
+    }
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+    .product {
+        float: left;
+        width: 50%;
+        padding-right: 2rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .product {
+        float: left;
+        width: 33.33%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .product-info {
+        float: left;
+        width: 30%;
+    }
+
+    .products-inventory {
+        float: left;
+        width: 70%;
+
+        .product {
+            margin-bottom: 0;
+            padding: 0 1rem;
+        }
+    }
+}
