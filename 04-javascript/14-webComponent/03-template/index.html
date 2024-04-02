@@ -8,6 +8,44 @@
     <script type="module" src="./script.js" defer></script>
 </head>
 <body>
-    
+    <super-card></super-card>
+    <super-card>
+        <span slot="title">Super Titre</span>
+        <span slot="text"><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, quam nesciunt</strong> ut maiores autem dolorem consectetur qui blanditiis consequatur! Quasi dolores temporibus libero velit eaque eveniet accusamus? Dolorum, reiciendis placeat!</span>
+        <span slot="btn">Super Bouton !</span>
+    </super-card>
+    <template id="blog">
+        <article>
+            <div>
+                <h2>title</h2>
+                <p>text</p>
+                <a href="#">src</a>
+            </div>
+        </article>
+    </template>
+    <template id="card">
+        <style>
+            div
+            {
+                display: inline-block;
+                width: 25vw;
+                border: 2px solid black;
+                border-radius: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+                padding: 1rem
+            }
+            h1{ margin-top: 0;}
+            button
+            {
+                text-align: center;
+                background-color: lightgreen;
+            }
+        </style>
+        <div>
+            <h1><slot name="title">Titre à changer</slot></h1>
+            <p><slot name="text">Texte à changer</slot></p>
+            <button><slot name="btn">Bouton à changer</slot></button>
+        </div>
+    </template>
 </body>
 </html>
