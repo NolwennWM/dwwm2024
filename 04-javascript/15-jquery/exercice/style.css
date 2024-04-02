@@ -30,6 +30,7 @@ h1 {
     padding: 0;
     height: 200px;
     list-style: none;
+    left: 0;
 }
 
 #slider ul li {
