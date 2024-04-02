@@ -1,0 +1,116 @@
+{
+    "appartement": [
+        {
+            "titre":"Appartement avec étage",
+            "ville":"Paris",
+            "prix":450000,
+            "photos":"appart1.jpg"
+        },
+        {
+            "titre":"Appartement Boisé",
+            "ville":"Marseille",
+            "prix":398000,
+            "photos":"appart2.jpg"
+        },
+        {
+            "titre":"Appartement Bord de lac",
+            "ville":"Annecy",
+            "prix":684000,
+            "photos":"appart3.jpg"
+        },
+        {
+            "titre":"Appartement d'artiste",
+            "ville":"Lille",
+            "prix":250000,
+            "photos":"appart4.jpg"
+        },
+        {
+            "titre":"Appartement luxueux",
+            "ville":"Bordeaux",
+            "prix":325000,
+            "photos":"appart5.jpg"
+        },
+        {
+            "titre":"Appartement coloré",
+            "ville":"Nantes",
+            "prix":199000,
+            "photos":"appart6.jpg"
+        }
+    ],
+    "maison": [
+        {
+            "titre":"Plus grande à l'intérieur",
+            "ville":"Gallifrey",
+            "prix":1963000,
+            "photos":"houseTardis.jpg"
+        },
+        {
+            "titre":"Maison de Campagne",
+            "ville":"Cottington",
+            "prix":197900,
+            "photos":"house42.webp"
+        },
+        {
+            "titre":"Villa Côtière",
+            "ville":"Innsmouth",
+            "prix":192800,
+            "photos":"houseAlone.jpg"
+        },
+        {
+            "titre":"Maison pour famille nombreuse",
+            "ville":"Chicago",
+            "prix":1938000,
+            "photos":"houseDark.jpg"
+        },
+        {
+            "titre":"Maison de campagne",
+            "ville":"Hobbiton",
+            "prix":193700,
+            "photos":"houseHobbit.jpg"
+        },
+        {
+            "titre":"Luxueuse Villa",
+            "ville":"Paris",
+            "prix":6300000,
+            "photos":"houseLuxe.jpg"
+        }
+    ],
+    "terrain": [
+        {
+            "titre":"Terrain en centre ville",
+            "ville":"Roubaix",
+            "prix":255000,
+            "photos":"terrain1.jpg"
+        },
+        {
+            "titre":"Ancien champ de blé",
+            "ville":"Roumoules",
+            "prix":75000,
+            "photos":"terrain2.jpg"
+        },
+        {
+            "titre":"pré en montagne",
+            "ville":"Riez",
+            "prix":98000,
+            "photos":"terrain3.jpg"
+        },
+        {
+            "titre":"Terrain avec arbre",
+            "ville":"Montcuq",
+            "prix":120000,
+            "photos":"terrain4.jpg"
+        },
+        {
+            "titre":"Terrain avec cabane",
+            "ville":"Lugos",
+            "prix":150000,
+            "photos":"terrain5.jpg"
+        },
+        {
+            "titre":"Terrain avec muret",
+            "ville":"Sèvremont",
+            "prix":135000,
+            "photos":"terrain6.jpg"
+        }
+    ]
+}
