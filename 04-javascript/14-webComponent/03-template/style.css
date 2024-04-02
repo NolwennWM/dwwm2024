@@ -1,0 +1,30 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+article{
+    width: 80vw;
+    margin: 1rem auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+}
+article > div > *:not(:last-child)
+{
+    margin-bottom: 1rem;
+}
+article h2
+{
+    text-align: center;
+}
+article p
+{
+    text-align: justify;
+    line-height: 1.5em;
+}
+article a
+{
+    display: block;
+    text-align: right;
+}

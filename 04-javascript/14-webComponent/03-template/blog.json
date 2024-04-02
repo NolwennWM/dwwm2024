@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Développeur web",
+        "content": "Un développeur web est un informaticien spécialisé dans la programmation ou expressément impliqué dans le développement des applications du web, ou des applications qui sont exécutées à partir d'un serveur web sur un navigateur web et qui utilisent le protocole HTTP comme vecteur de transmission de l'information.",
+        "source": "https://fr.wikipedia.org/wiki/D%C3%A9veloppeur_web"
+    },
+    {
+        "title": "HyperText Markup Language",
+        "content": "Le HyperText Markup Language, généralement abrégé HTML ou, dans sa dernière version, HTML5, est le langage de balisage conçu pour représenter les pages web. Ce langage permet d’écrire de l’hypertexte (d’où son nom), de structurer sémantiquement une page web, de mettre en forme du contenu, de créer des formulaires de saisie ou encore d’inclure des ressources multimédias dont des images, des vidéos, et des programmes informatiques. L'HTML offre également la possibilité de créer des documents interopérables avec des équipements très variés et conformément aux exigences de l’accessibilité du web. Il est souvent utilisé conjointement avec le langage de programmation JavaScript et des feuilles de style en cascade (CSS). HTML est inspiré du Standard Generalized Markup Language (SGML). Il s'agit d'un format ouvert. ",
+        "source": "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language"
+    }
+]
