@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "ESNext",
+        "noEmitOnError": true,
+        "strict": true
+    },
+    "files":[
+        "src/01-install.ts",
+        "src/02-syntaxe.ts"
+    ]
+}
