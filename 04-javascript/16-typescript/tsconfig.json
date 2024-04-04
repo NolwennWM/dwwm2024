@@ -7,6 +7,8 @@
     },
     "files":[
         "src/01-install.ts",
-        "src/02-syntaxe.ts"
+        "src/02-syntaxe.ts",
+        "src/03-exercice.ts",
+        "src/04-narrowing.ts"
     ]
 }
