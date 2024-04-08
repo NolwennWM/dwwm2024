@@ -1,5 +1,39 @@
 <h1>Bienvenue sur {{title}} !</h1>
-<h2>{{recetteList[1]}}</h2>
+<p>{{recetteList[0].name}}</p>
+<p>{{recetteList[1].name}}</p>
+<p>{{recetteList[2].name}}</p>
+
+<!-- L'attribut entre crochet = "la valeur à lui donner" -->
+<!-- <a [href]="recetteList[0].name">Exemple</a>
+<a [attr.href]="recetteList[0].name">Exemple</a> -->
+<!-- On peut aussi ajouter ou supprimer des classes selon un boolean -->
+<!-- <div [class.super]="false">exemple</div> -->
+<!-- De la même façon, on peut modifier le style -->
+<!-- <div [style.color]="false?'red':'green'">exemple</div> -->
+
+<!-- Au clique sur le "p" j'appelle la fonction "selectRecette" -->
+<!-- <p (click)="selectRecette(recetteList[0])">{{recetteList[0].name}}</p> -->
+
+<!-- $event permet de passer l'objet "Event" à notre fonction -->
+<!-- <input type="number" (input)="selectRecette($event)"> -->
+
+<!-- 
+    le "#nom" permet de selectionner un élément HTML à l'interieur du HTML même
+    le "0" pour l'évènement, indique qu'il faut écouter l'évènement, mais qu'il n'y a pas de fonction à lancer.
+-->
+<!-- <input type="number" #inputRecette (input)="0">
+<p>{{inputRecette.value}}</p> -->
+
+<input type="number" #inputRecette (keyup.enter)="selectRecette(inputRecette.value)">
+@if(recetteSelected)
+{
+    <p>Vous avez sélectionné : {{recetteSelected.name}}</p>
+}
+@else {
+    <p>Aucune recette selectionnée</p>
+}
+<p *ngIf="recetteSelected">Vous avez sélectionné : {{recetteSelected.name}}</p>
+<p *ngIf="!recetteSelected">Aucune recette selectionnée</p>
 
 
 
