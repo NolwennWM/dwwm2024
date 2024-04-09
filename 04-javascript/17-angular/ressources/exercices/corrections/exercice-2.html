@@ -1,0 +1,15 @@
+
+<div class="container">
+    <div class="recette" *ngFor="let rec of recetteList">
+        <div class="image">
+            <img src="./assets/photos/{{rec.image}}" alt="{{rec.name}}">
+        </div>
+        <ul>
+            <li><span class="label">Nom :</span> {{rec.name}}</li>
+            <li><span class="label">Durée :</span> {{rec.duration}} minutes</li>
+            <li><span class="label">Description :</span> {{rec.description}}</li>
+            <li><span class="label">Crée le :</span> {{rec.createdAt}}</li>
+        </ul>
+        <span class="type">{{rec.type}}</span>
+    </div>
+</div>
