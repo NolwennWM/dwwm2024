@@ -1,0 +1,31 @@
+<div class="recette" *ngIf="recette">
+    <h2>
+        {{recette.name}} 
+        <span class="type" style="background-color:{{recette.type| typeColor}};">{{recette.type}}</span>
+    </h2>
+    <div class="header">
+        <div class="intro">
+            <p>{{recette.description}}</p>
+            <span class="date">{{recette.createdAt | date:"dd/MM/yyyy"}}</span>
+        </div>
+        <div class="image">
+            <img src="./assets/photos/{{recette.image}}" alt="{{recette.name}}">
+        </div>
+        <div class="details">
+            <h4>Durée :</h4>
+            <p>{{recette.duration}} minutes</p>
+            <h3>Ingrédients :</h3>
+            <ul>
+                <li *ngFor="let ing of recette.ingredients">{{ing}}</li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="steps">
+        <p *ngFor="let step of recette.steps; index as i">
+            <span class="number">Étape {{i+1}} :</span> <br>
+            {{ step }}
+        </p>
+    </div>
+</div>
+<p *ngIf="!recette"> Aucune recette n'a été trouvé.</p>
