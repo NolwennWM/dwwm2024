@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Recette, Types } from './Recette';
 import { RECETTES } from './RecetteList';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RecetteService {
 
   constructor() { }

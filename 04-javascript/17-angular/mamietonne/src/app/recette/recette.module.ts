@@ -6,17 +6,25 @@ import { BorderCardDirective } from './border-card.directive';
 import { TypeColorPipe } from './type-color.pipe';
 import { RouterModule } from '@angular/router';
 import { recetteRoutes } from './recette.routes';
+import { RecetteService } from './recette.service';
+import { FormsModule } from '@angular/forms';
+import { EditRecetteComponent } from './edit-recette/edit-recette.component';
+import { RecetteFormComponent } from './recette-form/recette-form.component';
 
 @NgModule({
   declarations: [
     ListeRecetteComponent,
     DetailRecetteComponent,
     BorderCardDirective,
-    TypeColorPipe
+    TypeColorPipe,
+    EditRecetteComponent,
+    RecetteFormComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(recetteRoutes)
-  ]
+    RouterModule.forChild(recetteRoutes),
+    FormsModule
+  ],
+  providers: [RecetteService]
 })
 export class RecetteModule { }

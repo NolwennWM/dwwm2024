@@ -1,0 +1,26 @@
+.recetteForm{
+    width: 80%;
+    margin: 1rem auto;
+    & fieldset{
+        padding: 1rem;
+        & legend{
+            font-weight: bold;
+        }
+        & textarea, & input:not([type="radio"]){
+            width: 100%;
+        }
+    }
+    & label:not(.types){
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 0.3rem;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+    & button[type="submit"]{
+        margin: 1rem auto;
+        display: inline-block;
+        width: 100%;
+        font-size: 2rem;
+    }
+}

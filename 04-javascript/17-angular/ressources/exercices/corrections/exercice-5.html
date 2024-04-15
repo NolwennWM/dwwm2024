@@ -1,0 +1,42 @@
+<form class="recetteForm" *ngIf="recette">
+    <fieldset>
+        <legend>Introduction</legend>
+        <!-- Recette Name -->
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" id="nom" required pattern="^[a-zA-Zàéèç]{1,50}$">
+        <div class="error">
+            Le nom de la recette est requise (entre 1 et 50 caractères)
+        </div>
+        <!-- Recette Duration -->
+        <label for="duration">Durée :</label>
+        <input type="number" name="duration" id="duration" required pattern="^[1-9][0-9]*$">
+        <div class="error">
+            La durée de la recette est requise (en minute)
+        </div>
+        <!-- Recette Description -->
+        <label for="description">Description :</label>
+        <textarea name="description" id="description" cols="30" rows="10" required pattern=".{25,}"></textarea>
+        <div class="error">
+            La description de la recette est requise 
+        </div>
+        <!-- Recette Type -->
+        <label for="type">Type :</label>
+        <input type="radio" name="type" id="type" required>
+    </fieldset>
+    <fieldset>
+        <legend>Détails</legend>
+        <!-- Recette Ingredients -->
+        <label for="ingredient">Ingrédients :</label>
+        <textarea name="ingredient" id="ingredient" cols="30" rows="10" required pattern=".{5,}(\n|.)*"></textarea>
+        <div class="error">
+            La liste des ingrédients de la recette est requise 
+        </div>
+        <!-- Recette steps -->
+        <label for="steps">Étapes :</label>
+        <textarea name="steps" id="steps" cols="30" rows="10" required pattern=".{5,}(\n|.)*"></textarea>
+        <div class="error">
+            Les étapes de la recette sont requises 
+        </div>
+    </fieldset>
+    <button type="submit">Sauvegarder</button>
+</form>

@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 // import { BorderCardDirective } from '../border-card.directive';
 // import { TypeColorPipe } from '../type-color.pipe';
 import { Recette } from '../Recette';
-import { RECETTES } from '../RecetteList';
+// import { RECETTES } from '../RecetteList';
 import { Router } from '@angular/router';
+import { RecetteService } from '../recette.service';
 
 @Component({
   selector: 'app-liste-recette',
@@ -14,13 +15,14 @@ import { Router } from '@angular/router';
   styleUrl: './liste-recette.component.css'
 })
 export class ListeRecetteComponent implements OnInit{
-  recetteList: Recette[] = RECETTES;
+  recetteList: Recette[] = [];
   recetteSelected: Recette|undefined;
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private recetteService: RecetteService){}
 
   ngOnInit(): void
   {
+    this.recetteList = this.recetteService.getRecetteList();
     console.table(this.recetteList);    
     // this.selectRecette(this.recetteList[0]);
   }
