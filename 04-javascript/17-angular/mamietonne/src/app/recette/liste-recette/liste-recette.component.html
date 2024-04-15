@@ -41,7 +41,7 @@
 <p *ngFor="let rec of recetteList">{{rec.name}}</p>
 <!-- jusque là -->
 <div class="container">
-    <div appBorderCard="{{rec.type|typeColor}}" class="recette" *ngFor="let rec of recetteList">
+    <div appBorderCard="{{rec.type|typeColor}}" class="recette" *ngFor="let rec of recetteList" (click)="goToRecette(rec)">
         <div class="image">
             <img src="./assets/photos/{{rec.image}}" alt="{{rec.name}}">
         </div>

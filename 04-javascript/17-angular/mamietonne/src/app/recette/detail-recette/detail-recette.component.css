@@ -57,3 +57,10 @@
         }
     }
 }
+button
+{
+    float: right;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
+}

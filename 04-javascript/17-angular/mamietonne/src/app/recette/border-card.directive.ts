@@ -2,8 +2,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 type shadow = [number, number, number, number];
 
 @Directive({
-  selector: '[appBorderCard]',
-  standalone: true
+  selector: '[appBorderCard]'
 })
 export class BorderCardDirective {
   defaultColor = "black";

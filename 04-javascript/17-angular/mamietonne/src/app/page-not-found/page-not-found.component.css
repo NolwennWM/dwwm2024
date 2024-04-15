@@ -1,0 +1,15 @@
+.notFound
+{
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+    & * 
+    {
+        margin: 1rem;
+    }
+    & a
+    {
+        display: block;
+        font-size: 2rem;
+    }
+}

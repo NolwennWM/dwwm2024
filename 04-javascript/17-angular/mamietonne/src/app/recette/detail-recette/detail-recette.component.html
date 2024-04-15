@@ -1,7 +1,9 @@
+<button (click)="goToRecetteList()">Retour</button>
+
 <div class="recette" *ngIf="recette">
     <h2>
         {{recette.name}} 
-        <span class="type" style="background-color:{{recette.type| typeColor}};">{{recette.type}}</span>
+        <span class="type" [style.backgroundColor]="recette.type| typeColor">{{recette.type}}</span>
     </h2>
     <div class="header">
         <div class="intro">
