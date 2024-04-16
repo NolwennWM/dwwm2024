@@ -1,11 +1,40 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Recette } from '../Recette';
+import { RecetteService } from '../recette.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recette-form',
   templateUrl: './recette-form.component.html',
   styleUrl: './recette-form.component.css'
 })
-export class RecetteFormComponent {
-@Input() recette?: Recette;
+export class RecetteFormComponent implements OnInit{
+  @Input() recette?: Recette;
+
+  types: string[] = [];
+  ingredientsList: string = "";
+  stepsList: string = "";
+
+  constructor(private recetteService: RecetteService, private router: Router){}
+
+  ngOnInit(): void 
+  {
+    // je récupère la liste des types de recette.
+    this.types = this.recetteService.getRecetteTypeList();
+    if(!this.recette)return;
+    // je transforme des tableaux en string.
+    this.ingredientsList = this.recette.ingredients.join("\n");
+    this.stepsList = this.recette.steps.join("\n");
+  }
+  hasType(type: string): boolean
+  {
+    if(!this.recette)return false;
+    return this.recette.type.includes(type);
+  }
+  selectType($event: Event, type: string):void
+  {
+    if(!this.recette)return;
+    const isChecked: boolean = ($event.target as HTMLInputElement).checked;
+    this.recette.type = isChecked?type:"";
+  }
 }
