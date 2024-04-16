@@ -37,4 +37,14 @@ export class RecetteFormComponent implements OnInit{
     const isChecked: boolean = ($event.target as HTMLInputElement).checked;
     this.recette.type = isChecked?type:"";
   }
+  onSubmit(): void
+  {
+    if(this.recette)
+    {
+      // Je transforme mes strings en tableau :
+      this.recette.ingredients = this.ingredientsList.split("\n");
+      this.recette.steps = this.stepsList.split("\n");
+    }
+    this.router.navigate(["/recettes", this.recette?.id]);
+  }
 }
