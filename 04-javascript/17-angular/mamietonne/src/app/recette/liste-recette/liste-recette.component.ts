@@ -22,7 +22,8 @@ export class ListeRecetteComponent implements OnInit{
 
   ngOnInit(): void
   {
-    this.recetteList = this.recetteService.getRecetteList();
+    // this.recetteList = this.recetteService.getRecetteList();
+    this.recetteService.getRecetteList().subscribe(liste=>this.recetteList = liste);
     console.table(this.recetteList);    
     // this.selectRecette(this.recetteList[0]);
   }

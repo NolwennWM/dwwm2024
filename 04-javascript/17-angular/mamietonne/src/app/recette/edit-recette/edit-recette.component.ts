@@ -16,6 +16,7 @@ export class EditRecetteComponent implements OnInit{
   ngOnInit(): void 
   {
     const recetteId: number = parseInt(this.route.snapshot.paramMap.get("id")??"");
-    this.recette = this.recetteService.getRecetteById(recetteId);
+    // this.recette = this.recetteService.getRecetteById(recetteId);
+    this.recetteService.getRecetteById(recetteId).subscribe(recette=>this.recette = recette);
   }
 }

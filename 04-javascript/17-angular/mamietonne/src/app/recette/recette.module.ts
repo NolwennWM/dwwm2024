@@ -10,6 +10,7 @@ import { RecetteService } from './recette.service';
 import { FormsModule } from '@angular/forms';
 import { EditRecetteComponent } from './edit-recette/edit-recette.component';
 import { RecetteFormComponent } from './recette-form/recette-form.component';
+import { AddRecetteComponent } from './add-recette/add-recette.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RecetteFormComponent } from './recette-form/recette-form.component';
     BorderCardDirective,
     TypeColorPipe,
     EditRecetteComponent,
-    RecetteFormComponent
+    RecetteFormComponent,
+    AddRecetteComponent
   ],
   imports: [
     CommonModule,
