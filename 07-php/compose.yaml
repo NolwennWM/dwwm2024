@@ -1,0 +1,49 @@
+version: '0.3'
+
+services:
+  web:
+    build: .
+    depends_on:
+      - mysql
+    container_name: serverApache
+    restart: unless-stopped
+    ports:
+      - "8082:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - ALLOW_OVERRIDE=true
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=blog
+  mysql:
+    image: mariadb
+    container_name: serverMySQL
+    restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+    ports:
+      - "3302:3306"
+    volumes:
+      - ./ressources/database/bddtotal.sql:/docker-entrypoint-initdb.d/bddtotal.sql
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: serverPHPMyAdmin
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+    ports:
+      - "8083:80"
+  mongodb:
+    image: mongo
+    container_name: serverMongo
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    ports:
+      - "27018:27017"
