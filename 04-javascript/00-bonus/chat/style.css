@@ -1,0 +1,40 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+header
+{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.blockChat
+{
+    margin: auto;
+    min-width: 200px;
+    width: 80%;
+    height: 100%;
+}
+.blockChat .chat
+{
+    height: 80%;
+    border: 1px solid black;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem;
+}
+.btnChat
+{
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+.login {background-color: lightgreen;}
+.logout {background-color: lightcoral;}

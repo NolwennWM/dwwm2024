@@ -5,7 +5,7 @@ services:
     build: .
     depends_on:
       - mysql
-    container_name: serverApache
+    container_name: serverApache2024
     restart: unless-stopped
     ports:
       - "8082:80"
@@ -19,7 +19,7 @@ services:
       - DB_NAME=blog
   mysql:
     image: mariadb
-    container_name: serverMySQL
+    container_name: serverMySQL2024
     restart: unless-stopped
     environment:
       - MARIADB_ROOT_PASSWORD=root
@@ -29,7 +29,7 @@ services:
       - ./ressources/database/bddtotal.sql:/docker-entrypoint-initdb.d/bddtotal.sql
   phpmyadmin:
     image: phpmyadmin
-    container_name: serverPHPMyAdmin
+    container_name: serverPHPMyAdmin2024
     restart: unless-stopped
     depends_on:
       - mysql
@@ -40,7 +40,7 @@ services:
       - "8083:80"
   mongodb:
     image: mongo
-    container_name: serverMongo
+    container_name: serverMongo2024
     restart: unless-stopped
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
