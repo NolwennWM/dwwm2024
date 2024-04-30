@@ -223,4 +223,47 @@ echo $person["loisir"][0], "<br>";
 // Supprimer un élément d'un tableau
 unset($person["age"]);
 echo '<pre>'.print_r($person, 1).'</pre>';
+
+// Cela ne pose aucun problème pour un tableau associatif mais pour un tableau indexé par des nombres :
+unset($b[1]);
+var_dump($b);
+echo "<br>";
+// Pour corriger la disparition de l'index 1, deux solutions :
+// array_values va créer un nouveau tableau avec les même valeurs :
+$b = array_values($b);
+var_dump($b);
+echo "<br>";
+// Soit on supprimera l'élément avec array_splice :
+array_splice($a, 1,1);
+// Cette fonction supprime un élément du tableau en premier argument, à la position en second argument, sur une longueur donnée en troisième.
+var_dump($a);
+// On pourra trier un tableau avec sort ou ses dérivés
+sort($a);
+/* 
+    rsort() trier par ordre décroissant :
+    pour tableau associatif :
+        asort() trier par ordre croissant des valeurs
+        ksort() trier par ordre croissant des clefs
+        arsort() trier par ordre décroissant des valeurs
+        krsort() trier par ordre décroissant des clefs
+*/
+# --------------------------------------------------
+echo "<h2>Boolean</h2> <hr>";
+/* 
+    Les booleans ne peuvent être que "true" ou "false"
+    Ils peuvent être récupéré par les même comparateurs que JS
+        <, >, <=, >=, ==, ===, != (ou <>), !== 
+
+    "and" peut s'écrire de deux façons :
+*/
+var_dump(true and false);
+var_dump(true && false);
+// De même pour "or"
+var_dump(true or false);
+var_dump(true || false);
+
+// En php il existe aussi "xor"
+var_dump(true xor true);
+// vrai uniquement si l'un des deux est vrai. (mais pas les deux)
+var_dump(!true);
 ?>
