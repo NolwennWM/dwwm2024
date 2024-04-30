@@ -7,6 +7,7 @@
 
     Include et require font parti des quelques fonctions php, dont les parenthèses sont optionnelles.
 */
+$title = "Include et Require";
 require "../ressources/template/_header.php";
 /* 
     La différence entre include et require est :
