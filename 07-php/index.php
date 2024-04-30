@@ -7,7 +7,7 @@ require "./ressources/template/_header.php";
             <h3>01 - Syntaxeeee :</h3>
             <ol>
                 <li>
-                    <a href="./01-syntaxe/01-variable.php">Variables</a>
+                    <a href="./01-syntaxe/01-variables.php">Variables</a>
                 </li>
                 <li>
                     <a href="./01-syntaxe/02-condition.php">Conditions</a>
