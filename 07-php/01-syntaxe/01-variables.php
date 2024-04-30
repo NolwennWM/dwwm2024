@@ -266,4 +266,39 @@ var_dump(true || false);
 var_dump(true xor true);
 // vrai uniquement si l'un des deux est vrai. (mais pas les deux)
 var_dump(!true);
+# --------------------------------------------------------
+echo "<h1>Les variables superglobals</h1><hr>";
+
+/* 
+    Les variables super globals sont des variables prédéfinies
+    accessibles n'importe où dans votre code.
+
+    $GLOBALS
+    stock toute les variables globales définies (par vous ou php)
+
+    $_SERVER
+    Contient les informations liées au serveur et à la requête
+
+    $_REQUEST
+    Contient les mêmes informations que $_POST, $_GET et $_COOKIE
+
+    $_POST
+    Contient toute les données envoyé en method POST.
+
+    $_GET
+    Contient toute les données envoyé en method GET.
+
+    $_FILES
+    Contient toute les informations des fichiers téléversés.
+
+    $_ENV
+    Contient les variables d'environnement.
+
+    $_COOKIE
+    Contient toute les informations des cookies
+
+    $_SESSION
+    Contient toute les informations stockés en session
+*/
+echo '<pre>'.print_r($_SESSION, 1).'</pre>';
 ?>
