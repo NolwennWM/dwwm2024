@@ -1,7 +1,8 @@
 {
   "basilic@laposte.net": {
     "password": "$2y$10$Hn7l4petJPiFnAIZlpO1jeJ3IPw2waquHWETyRwuPQ2.P16p9B1zG",
-    "username": "Basile"
+    "username": "Basile",
+    "mdp": "detective"
   },
   "rome@gmail.com": {
     "password": "$2y$10$jhoQEUyjUPnfvH10wKEEhuv9mx5Idv.6hCGFG7KkV88qfjoeqNVYK",
