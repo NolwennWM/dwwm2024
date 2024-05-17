@@ -1,0 +1,38 @@
+{
+  "basilic@laposte.net": {
+    "password": "$2y$10$Hn7l4petJPiFnAIZlpO1jeJ3IPw2waquHWETyRwuPQ2.P16p9B1zG",
+    "username": "Basile"
+  },
+  "rome@gmail.com": {
+    "password": "$2y$10$jhoQEUyjUPnfvH10wKEEhuv9mx5Idv.6hCGFG7KkV88qfjoeqNVYK",
+    "username": "Cécilius"
+  },
+  "alc@gmail.com": {
+    "password": "$2y$10$cPkjr5oAwjuCEncXYi6X2OUxvUD4\\/6MdK.5JszVk4vmCgSBPNBeNy",
+    "username": "Alcédias"
+  },
+  "flo@outlook.fr": {
+    "password": "$2y$10$QwZz799AOqNd.aI4.itWE.lLGbeoSeAquSw\\/5VLa8VxXTSB6Q5xXK",
+    "username": "Florestan"
+  },
+  "elze@laposte.net": {
+    "password": "$2y$10$E\\/QkzOPJw\\/Z5n8dXsdT7Dugex0r1Zs.cjrrWDog7GxggLPr2a\\/xea",
+    "username": "Elzemond"
+  },
+  "dudu@outlook.fr": {
+    "password": "$2y$10$VeCuuC77R.KNLkdFe3w4WOpBOK2bS1CNvwYn0Fg8zpOa990dsRXVW",
+    "username": "Dulmène"
+  },
+  "deric@gmail.com": {
+    "password": "$2y$10$53SpimT78MqD3718kekp7.VUSveiExptZuyGqN14qx0jE24XbtHQy",
+    "username": "Ildéric"
+  },
+  "polite@gmail.com": {
+    "password": "$2y$10$8hv1lipMrVDFo8FGNUNbd.5r974rfOapmoEZg3aUGTcZn3ZbjnRNS",
+    "username": "Hypolite"
+  },
+  "gui@gmail.com": {
+    "password": "$2y$10$QHU9vwwzvuXNCj7dyLZEqezWY4g5e66PRo9epOXKo4gr3yh.YYGJu",
+    "username": "Guilmée"
+  }
+}

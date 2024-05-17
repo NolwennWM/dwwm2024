@@ -1,0 +1,97 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+}
+.plusOuMoins,
+.card .front,
+.gameZone form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.plusOuMoins {
+    background-color: rgb(16, 34, 16);
+    height: 100%;
+    background-image: url(../../../ressources/images/jeux/dark-green-texture.jpg);
+    background-size: cover;
+    color: #000000;
+}
+
+.card {
+    position: relative;
+    height: 30vh;
+    aspect-ratio: 8/11;
+    transform-style: preserve-3d;
+}
+
+.card-wrapper {
+    position: relative;
+    perspective: 2000px;
+    perspective-origin: top;
+}
+.error, .fail{
+    text-shadow: 1px 1px 5px red ,-1px -1px 5px red;
+}
+.success{
+    text-shadow: 1px 1px 5px green ,-1px -1px 5px green;
+}
+.reveal{
+    animation: 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0.5s reveal forwards;
+}
+@keyframes reveal {
+    from{
+        transform: rotateY(0);
+    }
+    to{
+        transform: rotateY(180deg);
+    }
+}
+.card .front,
+.card .back {
+    border-radius: 5px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 4px double;
+    outline: 4px solid;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    background-color: rgba(165, 42, 42, 0.733);
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+.card .front span{
+    font-size: 4rem;
+    font-weight: 900;
+}
+.card .back {
+    border-color: #302e9b;
+    outline-color: #302e9b;
+    background-color: white;
+    background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 0.2rem, #302e9b 0.2rem, #302e9b 0.4rem),
+        repeating-linear-gradient(-45deg, transparent, transparent 0.2rem, #302e9b 0.2rem, #302e9b 0.4rem);
+}
+.message{
+    font-size: 2.5rem;
+    width: 80vw;
+    text-align: center;
+}
+.plusOuMoins .gameZone input[type=number]{
+    font-size: 2rem;
+    text-align: center;
+    width: 5rem;
+}
+.plusOuMoins .gameZone input[type=submit]{
+    font-size: 2rem;
+    margin: 1rem;
+}
