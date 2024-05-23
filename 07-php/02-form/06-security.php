@@ -172,6 +172,9 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['password']))
         data-sitekey="6LfPA-YpAAAAAB-dij3zUjzyJVT7wiqVXVJQJG3x" 
         data-callback='onSubmit' 
         data-action='submit'>
+    <!-- exemple captcha maison -->
+    <!-- <img src="../ressources/service/_captcha.php" alt="captcha">
+    <input type="text" name="captcha"> -->
     <span class="error"><?php echo $error??"" ?></span>
 </form>
 <?php if(empty($error) && !empty($pass)):?>
