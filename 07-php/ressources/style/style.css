@@ -101,7 +101,7 @@ p{
     flex-direction: column;
     text-align: center;
     align-items: center;
-    font-size: clamp(2rem, 20vh, 3rem);
+    /* font-size: clamp(rem, 20vh, 3rem); */
 }
 /* Formulaire : */
 .error{

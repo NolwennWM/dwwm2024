@@ -6,6 +6,15 @@
     <title><?php echo $title??"Cours PHP"?></title>
     <link rel="stylesheet" href="/ressources/style/style.css">
     <script src="/ressources/script/script.js" defer></script>
+    <!-- captacha -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+    function onSubmit(token) 
+    {
+        document.querySelector("form").submit();
+    }
+    </script>
+
 </head>
 <body>
     <header>
