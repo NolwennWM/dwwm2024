@@ -114,6 +114,8 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['inscription']))
             Ici nous avons d'abbord, username, puis email, et enfin password
         */
         $sql->execute([$username, $email, $password]);
+        // message flash :
+        $_SESSION["flash"] = "Inscription prise en compte";
         /* 
             Enfin nous allons rediriger notre utilisateur vers une autre page.
             Souvent la page de connexion, mais nous ne l'avons pas encore.

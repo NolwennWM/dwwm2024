@@ -1,8 +1,38 @@
 <?php 
-$users = "";
+session_start();
+require "../ressources/service/_pdo.php";
+
+$pdo = connexionPDO();
+/* 
+    Ma requête ne contient aucune données rentrée par l'utilisateur
+    Je n'ai donc pas besoin de requête préparée.
+    J'utiliserais donc la methode "query" qui est executé directement.
+*/
+$sql = $pdo->query("SELECT idUser, username FROM users");
+/* 
+    Lorsque ma requête attend plusieurs résultats.
+    J'utiliserais "fetchAll()" au lieu de "fetch()"
+*/
+$users = $sql->fetchAll();
+
+
+/* 
+    Gestion de message flash envoyé depuis un autre fichier:
+*/
+if(isset($_SESSION["flash"]))
+{
+    $flash = $_SESSION["flash"];
+    unset($_SESSION["flash"]);
+}
 $title = " CRUD - Read ";
 require("../ressources/template/_header.php");
+// affichage message flash
+if(isset($flash)):
 ?>
+<div class="flash">
+    <?= $flash ?>
+</div>
+<?php endif;?>
 <h3>Liste des utilisateurs</h3>
 
 <?php if($users): ?>
