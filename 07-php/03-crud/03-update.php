@@ -1,4 +1,21 @@
 <?php
+// Si on n'est pas connecté, on est redirigé vers une autre page
+require "../ressources/service/_shouldBeLogged.php";
+shouldBeLogged(true, "./exercice/connexion.php");
+
+// Si l'utilisateur connecté est différent de l'utilisateur qu'on tente de modifier, alors on le redirige.
+if(!isset($_SESSION["idUser"], $_GET["id"]) || $_SESSION["idUser"] != $_GET["id"])
+{
+    header("Location: ./02-read.php");
+    exit;
+}
+
+require "../ressources/service/_pdo.php";
+$connexion = connexionPDO();
+$sql = $connexion->prepare("SELECT * FROM users WHERE idUser=:id");
+$sql->execute(["id"=>(int)$_GET["id"]]);
+$user = $sql->fetch();
+
 $title = " CRUD - Update ";
 require("../ressources/template/_header.php");
 if($user):
