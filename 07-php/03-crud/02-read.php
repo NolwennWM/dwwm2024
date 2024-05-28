@@ -53,6 +53,10 @@ if(isset($flash)):
             <a href="exercice/blog/read.php?id=<?php echo $row["idUser"] ?>">
                 Voir
             </a>
+            &nbsp;|&nbsp;
+            <a href="exercice/blog/formateur/read.php?id=<?php echo $row["idUser"] ?>">
+                Voir (correction formateur)
+            </a>
             <!-- On affiche le bouton éditer que si l'utilisateur est connecté -->
             <?php if(isset($_SESSION["idUser"]) && ($_SESSION["idUser"]) == $row["idUser"]): ?>
             &nbsp;|&nbsp;
