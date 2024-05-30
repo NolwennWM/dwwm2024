@@ -25,6 +25,19 @@ function getOneUserByEmail(string $email):array|false
     return $sql->fetch();
 }
 /**
+ * Selectionne un utilisateur via son ID
+ *
+ * @param string|int $id id de l'utilisateur
+ * @return array|false
+ */
+function getOneUserById(string|int $id):array|false
+{
+    $pdo = connexionPDO();
+    $sql = $pdo->prepare("SELECT * FROM users WHERE idUser=?");
+    $sql->execute([$id]);
+    return $sql->fetch();
+}
+/**
  * Ajoute un utilisateur en BDD
  *
  * @param string $username nom de l'utilisateur
