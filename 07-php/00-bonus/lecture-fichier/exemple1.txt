@@ -1,0 +1,6 @@
+En informatique, une expression régulière ou expression rationnelle ou expression normalenote ou motif est une chaîne de caractères qui décrit, selon une syntaxe précise, un ensemble de chaînes de caractères possibles. 
+Les expressions régulières sont également appelées regex (un mot-valise formé depuis l'anglais regular expression).
+Les expressions rationnelles sont issues des théories mathématiques des langages formels des années 1940. 
+Leur capacité à décrire avec concision des ensembles réguliers explique qu’elles se retrouvent dans plusieurs domaines scientifiques dans les années d’après-guerre et justifie leur adoption en informatique. Les expressions régulières sont aujourd’hui utilisées pour programmer des logiciels avec des fonctionnalités de lecture, de contrôle, de modification, et d'analyse de textes ainsi que dans la manipulation des langues formelles que sont les langages informatiques.
+
+Les expressions régulières ont la qualité de pouvoir être décrites par des formules ou motifs (en anglais patterns) bien plus simples que les autres moyens. 
