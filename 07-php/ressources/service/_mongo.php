@@ -36,7 +36,19 @@ function connexionMongo(): Manager
  */
 function queryResult(string $collection, Query $query, string $idName, bool $one = false): array
 {
-
+    global $mongo;
+    // execute dans la collection en premier argument, la requête en second argument.
+    $cursor = $mongo->executeQuery($collection, $query);
+    // Défini sous quelle forme les résultats doivent être affiché.
+    $cursor->setTypeMap(["root"=>"array"]);
+    // Je récupère le résultat sous forme de tableau :
+    $result = $cursor->toArray();
+    // Change l'objet id en string :
+    $betterResult = setId($result, $idName);
+    // Si $one vaut true et que j'ai au moins un résultat, je retourne le premier résultat uniquement
+    if($one && count($result)) return $betterResult[0];
+    // Sinon je retourne tout.
+    return $betterResult;
 }
 /**
  * Traduit l'id en string utilisable 
@@ -47,7 +59,13 @@ function queryResult(string $collection, Query $query, string $idName, bool $one
  * @return array
  */
 function setID(array $result, string $idName): array
-{}
+{
+    for($i = 0; $i < count($result); $i++)
+    {
+        $result[$i][$idName] = (string)$result[$i]["_id"];
+    }
+    return $result;
+}
 /**
  * Transforme l'id en ObjectId
  *
@@ -55,5 +73,7 @@ function setID(array $result, string $idName): array
  * @return ObjectId
  */
 function getId(string|int $id): ObjectId
-{}
+{
+    return new ObjectId((string)$id);
+}
 ?>

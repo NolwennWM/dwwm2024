@@ -19,6 +19,31 @@ const ROUTES = [
     "05-mvc/user/delete"=>[
         "controller"=>"userController.php", 
         "fonction"=>"deleteUser"
+    ],
+    // exercice:
+    "05-mvc/connexion"=>[
+        "controller"=>"authFormateurController.php", 
+        "fonction"=>"login"
+    ],
+    "05-mvc/deconnexion"=>[
+        "controller"=>"authFormateurController.php", 
+        "fonction"=>"logout"
+    ],
+    "05-mvc/message/list"=>[
+        "controller"=>"messageFormateurController.php", 
+        "fonction"=>"readMessage"
+    ],
+    "05-mvc/message/create"=>[
+        "controller"=>"messageFormateurController.php", 
+        "fonction"=>"createMessage"
+    ],
+    "05-mvc/message/update"=>[
+        "controller"=>"messageFormateurController.php", 
+        "fonction"=>"updateMessage"
+    ],
+    "05-mvc/message/delete"=>[
+        "controller"=>"messageFormateurController.php", 
+        "fonction"=>"deleteMessage"
     ]
 ];
 ?>

@@ -1,7 +1,8 @@
 <?php 
 require __DIR__."/../../ressources/service/_shouldBeLogged.php";
 require __DIR__."/../../ressources/service/_csrf.php";
-require __DIR__."/../model/userModel.php";
+// require __DIR__."/../model/userModel.php";
+require __DIR__."/../model/userMongoModel.php";
 /**
  * Gère la page d'inscription
  *
@@ -120,7 +121,7 @@ function updateUser()
         exit;
     }
     // Je récupère les informations de mon utilisateur
-    $user = getOneUserById((int)$_GET["id"]);
+    $user = getOneUserById($_GET["id"]);
 
     $username = $password = $email = "";
     $error = [];
@@ -212,7 +213,7 @@ function deleteUser()
         exit;
     }
     // On supprime l'utilisateur :
-    deleteUserById((int)$_GET["id"]);
+    deleteUserById($_GET["id"]);
     // On déconnecte l'utilisateur
     unset($_SESSION);
     session_destroy();

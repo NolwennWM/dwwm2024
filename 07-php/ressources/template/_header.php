@@ -16,7 +16,7 @@
     </script>
 
 </head>
-<body>
+<body class="<?= $bodyClass ?? "" ?>">
     <header>
         <h1><?php echo $title??"Cours PHP"?></h1>
     </header>
