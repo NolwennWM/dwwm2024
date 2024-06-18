@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {# {% for message in app.flashes("info") %}
+        <div>{{message}}</div>
+    {% endfor %} #}
+    {# {% for categorie, messages in app.flashes(["info", "other"]) %} #}
+    {% for categorie, messages in app.flashes %}
+        {% for message in messages %}
+            <div>
+                <strong>{{categorie}}</strong>
+                <br>
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <h2>Bonjour {{prenom ~" "~ nom}}</h2>
+
+    <h3>Déjà {{ app.session.get("nbVisite")}} visite(s)!</h3>
+
+    <a href="{{path('app_bonjour', {nom: "Fontaine", prenom: "Jean"})}}">Jean Fontaine</a>
+    <a href="{{path('app_hello', {username: "Kevin"})}}">Kevin</a>
+{% endblock %}
