@@ -1,0 +1,9 @@
+<header>
+    {% if header ?? false %}
+        {{header |raw}}
+    {% else %}
+        <h1>
+            {{ title ?? "Cours Symfony" }}
+        </h1>    
+    {% endif %}
+</header>
