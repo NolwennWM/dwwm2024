@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Exercice Todolist{% endblock %}
+{% block header %}Exercice Todolist{% endblock %}
+{% block body %}
+<div class="container">
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Titre</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for titre, todo in app.session.get("todolist") %}
+        <tr>
+            <th scope="row">{{titre}}</th>
+            <td>{{ todo }}</td>
+            <td>
+                <a class="btn btn-warning" href="{{ path("todo.delete", {name:titre}) }}">Supprimer</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="3" class="text-center">todolist vide</td>  
+        </tr>  
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-center">
+                <a class="btn btn-danger" href="{{ path("todo.reset") }}">Reset la todolist</a>
+            </td> 
+        </tr>
+    </tfoot>
+    </table>
+</div>
+{% endblock %}

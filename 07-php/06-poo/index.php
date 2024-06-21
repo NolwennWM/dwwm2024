@@ -5,4 +5,5 @@ require "./classes/Router.php";
 
 Autoloader::register();
 Router::routing();
+
 ?>
