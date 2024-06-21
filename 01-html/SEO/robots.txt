@@ -1,0 +1,8 @@
+Sitemap: https://www.monnomdedomaine.com/sitemap.xml
+
+User-agent: Googlebot
+Disallow: /admin/
+Disallow: /profile/
+
+User-agent: *
+Disallow: /
