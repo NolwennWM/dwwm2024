@@ -4,4 +4,34 @@
 
 {% block body %}
 
+<div class="pagination">
+    {% if currentPage > 1 %}
+        <a href="{{ path("app_message_read", {nb:nombre, page:1})}}">Première</a> | 
+        <a href="{{ path("app_message_read", {nb:nombre, page:currentPage - 1})}}">Précédent</a> | 
+    {% endif %}
+    {% for i in range(1, nbPage) %}
+        <a href="{{ path("app_message_read", {nb:nombre, page:i})}}">{{i}}</a> | 
+    {% endfor %}
+    {% if currentPage < nbPage %}
+        <a href="{{ path("app_message_read", {nb:nombre, page:currentPage + 1})}}">Suivant</a> | 
+        <a href="{{ path("app_message_read", {nb:nombre, page:nbPage})}}">Dernière</a>
+    {% endif %}
+</div>
+
+
+{% for mess in messages %}
+    <div class="message">
+        <div class="date1">
+            Ajouté le {{mess.createdAt | date("d/m/Y")}}
+        </div>
+        <div class="date2">
+            {{mess.editedAt ? "édité le : "~mess.editedAt|date("d/m/Y") : ""}}
+        </div>
+        <p>{{mess.content}}</p>
+        <div class="btns">
+            {# Todo : Nous ajouterons les différents boutons plus tard #}
+            <a href="{{ path("app_message_delete", {id: mess.id})}}">supprimer</a>
+        </div>
+    </div>
+{% endfor %}
 {% endblock %}

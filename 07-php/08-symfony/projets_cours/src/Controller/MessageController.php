@@ -13,14 +13,21 @@ use Symfony\Component\Routing\Attribute\Route;
 class MessageController extends AbstractController
 {
 
-    #[Route("/", name: "app_message_read")]
+    #[Route("/{page<\d+>?1}/{nb<\d+>?5}", name: "app_message_read")]
     // public function readMessage(ManagerRegistry $doc): Response
-    public function readMessage(MessageRepository $repo): Response
+    public function readMessage(MessageRepository $repo, $page, $nb): Response
     {
         // $repo = $doc->getRepository(Message::class);
-        $messages = $repo->findAll();
+        // $messages = $repo->findAll();
+        // $messages = $repo->findBy([], ["createdAt"=>"DESC"]);
+        $messages = $repo->findBy([], ["createdAt"=>"DESC"], $nb, ($page-1)*$nb);
+        $total = $repo->count();
+        $nbPage = ceil($total/$nb);
         return $this->render("message/index.html.twig", [
-            "messages"=> $messages
+            "messages"=> $messages,
+            "nbPage"=>$nbPage,
+            "nombre"=>$nb,
+            "currentPage"=>$page
         ]);
     }
 
@@ -43,5 +50,38 @@ class MessageController extends AbstractController
         return $this->render('message/index.html.twig', [
             'controller_name' => 'MessageController',
         ]);
+    }
+
+    #[Route("/delete/{id<\d+>}", name: "app_message_delete")]
+    public function deleteMessage(ManagerRegistry $doc, $id): Response
+    {
+        $repo = $doc->getRepository(Message::class);
+        $message = $repo->find($id);
+        if(!$message)
+        {
+            $this->addFlash("error", "Aucun message correspondant");
+        }
+        else
+        {
+            // dd($message);
+            $em = $doc->getManager();
+            $em->remove($message);
+            $em->flush();
+            $this->addFlash("info", "Message Supprimé");
+        }
+        return $this->redirectToRoute("app_message_read");
+    }
+    #[Route("/update/{id<\d+>}", name: "app_message_update")]
+    public function updateMessage(Message $message=null): Response
+    {
+        if(!$message)
+        {
+            $this->addFlash("error", "Aucun message correspondant");
+        }
+        else
+        {
+            dd($message);
+        }
+        return $this->redirectToRoute("app_message_read");
     }
 }
