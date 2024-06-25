@@ -3,12 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\MessageRepository;
+use App\Traits\TimeStampTrait;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
+#[ORM\HasLifecycleCallbacks()]
 class Message
 {
+    use TimeStampTrait;
+    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -17,11 +21,10 @@ class Message
     #[ORM\Column(type: Types::TEXT)]
     private ?string $Content = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $editedAt = null;
+
+    #[ORM\ManyToOne(inversedBy: 'messages')]
+    private ?Category $category = null;
 
     public function getId(): ?int
     {
@@ -40,26 +43,15 @@ class Message
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+
+    public function getCategory(): ?Category
     {
-        return $this->createdAt;
+        return $this->category;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    public function setCategory(?Category $category): static
     {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getEditedAt(): ?\DateTimeInterface
-    {
-        return $this->editedAt;
-    }
-
-    public function setEditedAt(?\DateTimeInterface $editedAt): static
-    {
-        $this->editedAt = $editedAt;
+        $this->category = $category;
 
         return $this;
     }
