@@ -6,6 +6,7 @@ use App\Repository\MessageRepository;
 use App\Traits\TimeStampTrait;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
 #[ORM\HasLifecycleCallbacks()]
@@ -18,6 +19,8 @@ class Message
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank(message:"Veuillez renseigner ce champ")]
+    #[Assert\Length(min: 3, max: 500)]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $Content = null;
 

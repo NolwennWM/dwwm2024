@@ -30,11 +30,11 @@
         </div>
         <p>{{mess.content}}</p>
         <div class="btns">
-            {# Todo : Nous ajouterons les différents boutons plus tard #}
             {% if mess.category %}
                 <a href="">{{ mess.category.name }}</a>
             {% endif %}
             
+            <a href="{{ path("app_message_update", {id: mess.id})}}">modifier</a>
             <a href="{{ path("app_message_delete", {id: mess.id})}}">supprimer</a>
         </div>
     </div>

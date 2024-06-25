@@ -14,6 +14,8 @@
     </head>
     <body>
         {% include "layout/_header.html.twig" with {header: block("header")??false} %}
+        
+        <main class="{{ mainClass ?? '' }}">
         <div class="container">
         {% for label, messages in app.flashes %}
             {% for message in messages %}
@@ -23,7 +25,6 @@
             {% endfor %}
         {% endfor %}
         </div>
-        <main class="{{ mainClass ?? '' }}">
             {% block body %}{% endblock %}
         </main>
         {% include "layout/_footer.html.twig" %}

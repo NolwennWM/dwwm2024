@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {# {{ form(messageForm) }} #}
+    {{ form_start(messageForm) }}
+    <div class="row">
+        <div class="col">{{ form_row(messageForm.Content)}}</div>
+        <div class="col">{{ form_row(messageForm.category)}}</div>
+    </div>
+    {{ form_rest(messageForm) }}
+{% endblock %}
