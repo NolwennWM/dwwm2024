@@ -22,6 +22,8 @@ class MessageController extends AbstractController
         // $messages = $repo->findBy([], ["createdAt"=>"DESC"]);
         $messages = $repo->findBy([], ["createdAt"=>"DESC"], $nb, ($page-1)*$nb);
         $total = $repo->count();
+        // $messages = $repo->findByDateInterval("2022-06-01", "2024-06-01");
+        // $total = count($messages);
         $nbPage = ceil($total/$nb);
         return $this->render("message/index.html.twig", [
             "messages"=> $messages,
@@ -71,8 +73,8 @@ class MessageController extends AbstractController
         }
         return $this->redirectToRoute("app_message_read");
     }
-    #[Route("/update/{id<\d+>}", name: "app_message_update")]
-    public function updateMessage(Message $message=null): Response
+    #[Route("/update/{id<\d+>}/{content}", name: "app_message_update")]
+    public function updateMessage(Message $message=null, ManagerRegistry $doc, $content): Response
     {
         if(!$message)
         {
@@ -80,7 +82,14 @@ class MessageController extends AbstractController
         }
         else
         {
-            dd($message);
+            // dd($message);
+            $message->setContent($content)
+                    ->setEditedAt(new \DateTime());
+            $em = $doc->getManager();
+            $em->persist($message);
+            $em->flush();
+
+            $this->addFlash("info", "Message mis à jour");
         }
         return $this->redirectToRoute("app_message_read");
     }

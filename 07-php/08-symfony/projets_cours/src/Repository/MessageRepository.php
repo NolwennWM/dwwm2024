@@ -40,4 +40,14 @@ class MessageRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+    public function findByDateInterval(string $min, string $max): array
+    {
+        return $this->createQueryBuilder("m")
+                    ->andWhere("m.createdAt BETWEEN :min AND :max")
+                    ->setParameter("min", $min)
+                    ->setParameter("max", $max)
+                    ->orderBy("m.createdAt", "DESC")
+                    ->getQuery()
+                    ->getResult();
+    }
 }
