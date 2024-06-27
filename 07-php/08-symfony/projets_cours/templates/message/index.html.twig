@@ -28,7 +28,12 @@
         <div class="date2">
             {{mess.editedAt ? "édité le : "~mess.editedAt|date("d/m/Y") : ""}}
         </div>
-        <p>{{mess.content}}</p>
+        <p>
+            {{mess.content}}
+            {% if mess.image %}
+            <img src="{{ asset('uploads/messages/'~mess.image)}}" alt="Image accompagnant le message">
+            {% endif %}
+        </p>
         <div class="btns">
             {% if mess.category %}
                 <a href="">{{ mess.category.name }}</a>

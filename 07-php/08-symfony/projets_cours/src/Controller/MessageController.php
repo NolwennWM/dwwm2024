@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Message;
 use App\Form\MessageType;
 use App\Repository\MessageRepository;
+use App\Service\Uploader;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,6 +15,8 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route("/message")]
 class MessageController extends AbstractController
 {
+    public function __construct(private Uploader $uploader)
+    {}
 
     #[Route("/{page<\d+>?1}/{nb<\d+>?5}", name: "app_message_read")]
     // public function readMessage(ManagerRegistry $doc): Response
@@ -58,6 +61,12 @@ class MessageController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
+            $image = $form->get("imageFile")->getData();
+            if($image)
+            {
+                $dir = $this->getParameter("message_directory");
+                $message->setImage($this->uploader->uploadFile($image, $dir));
+            }
             $em = $doc->getManager();
             $em->persist($message);
             $em->flush();
@@ -82,6 +91,12 @@ class MessageController extends AbstractController
         else
         {
             // dd($message);
+            $dir = $this->getParameter("message_directory");
+            $img = $message->getImage();
+            if($img)
+            {
+                unlink($dir."/".$img);
+            }
             $em = $doc->getManager();
             $em->remove($message);
             $em->flush();
@@ -117,6 +132,17 @@ class MessageController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
+            $image = $form->get("imageFile")->getData();
+            if($image)
+            {
+                $oldImage = $message->getImage();
+                $dir = $this->getParameter("message_directory");
+                $message->setImage($this->uploader->uploadFile($image, $dir));
+                if($oldImage)
+                {
+                    unlink($dir."/".$oldImage);
+                }
+            }
             $em = $doc->getManager();
             $em->persist($message);
             $em->flush();
