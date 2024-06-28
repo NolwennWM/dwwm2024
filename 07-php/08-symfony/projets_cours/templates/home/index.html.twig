@@ -33,6 +33,7 @@
     {# XSS #}
     {{xss}}
     {# {{xss | raw}} #}
+    {{dump(app.user)}}
 {% endblock %}
 {% block header %}
 <h1>Truc</h1>
